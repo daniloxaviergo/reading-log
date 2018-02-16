@@ -1,5 +1,5 @@
 GEM
-  remote: file://home/danilo/Documents/scripts/manager_reader/reading_log/vendor/cache/
+  remote: https://rubygems.org/
   specs:
     actionmailer (4.2.4)
       actionpack (= 4.2.4)

@@ -1,24 +1,31 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
-gem 'sqlite3'
+gem 'rails'
 gem 'sass-rails'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'uglifier'
+gem 'coffee-rails'
 
 gem 'descriptive_statistics'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'bower-rails'
 gem 'angular-rails-templates'
-gem 'jbuilder', '~> 2.0'
-gem 'responders', '~> 2.0'
+gem 'jbuilder'
+gem 'responders'
 
-gem 'rails-html-sanitizer', '~> 1.0'
-gem 'pry', '~> 0.11.1'
+gem 'rails-html-sanitizer'
+gem 'pry'
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0.0.beta2'
+  gem 'web-console'
   gem 'spring'
+end
+
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
 end

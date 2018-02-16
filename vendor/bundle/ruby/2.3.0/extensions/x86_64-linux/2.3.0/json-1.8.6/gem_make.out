@@ -1,0 +1,13 @@
+current directory: /home/danilo/jobs/reading-log/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+/usr/local/rvm/rubies/ruby-2.3.4/bin/ruby -r ./siteconf20180216-14045-yw9l8z.rb extconf.rb
+creating Makefile
+
+current directory: /home/danilo/jobs/reading-log/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/danilo/jobs/reading-log/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/danilo/jobs/reading-log/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" install

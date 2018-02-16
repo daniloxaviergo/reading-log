@@ -1,0 +1,42 @@
+<!-- page content -->
+<div ng-controller="Project::FormController" ng-init="init()" role="main">
+  <div class="page-title">
+    <div class="title">
+      <a ng-click="form.close()" class="btn btn-default" style="float: left;margin-right: 12px;padding-top: 2px;padding-bottom: 2px;">
+        <i class="fa fa-reply"></i>
+      </a>
+      <h3 class="hidden-xs">New Project</h3>
+      <h4 class="visible-xs">New Project</h4>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row" style="min-height:780px">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+          <br>
+          <form role="form">
+            <div class="form-group">
+              <label for="book_author">Nome</label>
+              <input type="text" name="book_author" ng-model="project.nome" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="book_title">Total Page</label>
+              <input type="text" name="book_title" ng-model="project.total_page" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="book_title">Incial Page</label>
+              <input type="text" name="book_title" ng-model="project.page" class="form-control" required />
+            </div>
+            <div class="actions">
+              <div class="pull-right">
+                <button class="btn btn-primary" ng-click="submitProject()">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->

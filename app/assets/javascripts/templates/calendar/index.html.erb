@@ -1,0 +1,52 @@
+<!-- page content -->
+<div ng-controller="Calendar::IndexController" ng-init="init()" class="right_col" role="main" style="min-height: 800px">
+  <h1>Calendar</h1>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="btn-group">
+        <label class="btn btn-primary" ng-model="calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">Year</label>
+        <label class="btn btn-primary" ng-model="calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">Month</label>
+        <label class="btn btn-primary" ng-model="calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">Week</label>
+        <label class="btn btn-primary" ng-model="calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">Day</label>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <button
+        class="btn btn-primary"
+        mwl-date-modifier
+        date="viewDate"
+        decrement="calendarView">
+        Previous
+      </button>
+
+      <button
+        class="btn btn-default"
+        mwl-date-modifier
+        date="viewDate"
+        set-to-today>
+        Today
+      </button>
+
+      <button
+        class="btn btn-primary"
+        mwl-date-modifier
+        date="viewDate"
+        increment="calendarView">
+        Next
+      </button>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+  <mwl-calendar
+    events="events"
+    view="calendarView"
+    view-date="viewDate"
+    day-view-start="00:00"
+    cell-is-open="false">
+  </mwl-calendar>
+</div>
+<!-- /page content -->
+

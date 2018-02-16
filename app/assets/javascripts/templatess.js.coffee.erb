@@ -1,0 +1,6 @@
+# app = angular.module 'app'
+
+angular.module('angular-rails-example').factory 'AppTemplate', ->
+  project:
+    log:
+      form: "<%= asset_path('/assets/templates/projects/logs/form.html') %>"

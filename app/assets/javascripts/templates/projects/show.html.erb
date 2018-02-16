@@ -1,0 +1,329 @@
+<!-- page content -->
+<div class="right_col" ng-controller="Project::ShowController" ng-init="init()" role="main">
+  <div class="page-title" style="margin-top: 60px">    
+    <div class="title">
+      <a href="javascript:history.back()" class="btn btn-default" style="float: left;margin-right: 12px;padding-top: 2px;padding-bottom: 2px;">
+        <i class="fa fa-reply"></i>
+      </a>
+      <h3 class="hidden-xs">{{project.nome}}</h3>
+      <h4 class="visible-xs">{{project.nome}}</h4>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="row tile_count title_count">
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 tile_stats_count">
+      <div class="count_top"><i class="fa fa-user"></i> Data início</div>
+      <span class="count">
+        {{ project.data_inicio }}
+      </span>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 tile_stats_count">
+      <span class="count_top"><i class="fa fa-user"></i> Média de página/dia</span>
+      <div class="count">{{ project.media_pagina_dia }}</div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 hidden-xs tile_stats_count">
+      <span class="count_top"><i class="fa fa-user"></i> Data finalização</span>
+      <div class="count">{{ project.dia_finalizacao }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="x_panel title">
+        <div class="x_title">
+          <span style="font-size: 15px; color: #73879C;">Progresso</span>
+        </div>
+
+        <div class="x_content" style="margin-top: 10px">
+          <div class="col-xs-12">
+            <div id="echart_guage" style="height:230px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8 col-sm-6 hidden-xs">
+      <div class="x_panel title">
+        <div class="x_title">
+          <span style="font-size: 15px; color: #73879C;">Geral</span>
+        </div>
+
+        <div class="x_content" style="margin-top: 10px">
+          <div class="col-xs-12">
+            <div id="mainb" style="height: 230px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="x_panel title">
+        <div class="x_title">
+          <span style="font-size: 15px; color: #73879C;">Atividade recente</span>
+        </div>
+
+        <div class="x_content" style="margin-top: 10px">
+          <div class="col-xs-12" style="padding: 0">
+            
+            <!-- end of user messages -->
+            <ul class="col-xs-12 messages">
+              <li ng-repeat="log in project.logs">
+                <div class="message_date" style="padding: 0">
+                  <h3 class="date text-info">{{getDia(log.data)}}</h3>
+                  <p class="month">{{getMes(log.data)}} - {{getAno(log.data)}}</p>
+                </div>
+                <div class="message_wrapper" style="padding: 0; margin: 0">
+                  <!-- <blockquote class="message">{{log|json}}</blockquote> -->
+
+                  <ul class="stats-overview" style="padding: 0">
+                    <li style="padding: 0; width: 24%">
+                      <span class="name"> Início </span>
+                      <span class="value text-success"> {{ log.start_page }} </span>
+                    </li>
+                    <li style="padding: 0; width: 24%">
+                      <span class="name"> Fim </span>
+                      <span class="value text-success"> {{log.end_page}} </span>
+                    </li>
+                    <li style="padding: 0; width: 24%">
+                      <span class="name"> Total </span>
+                      <span class="value text-success"> {{log.total_pages}} </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div ng-if="!log.note" class="clearfix"></div>
+                <div ng-if="log.note" class="message_wrapper" style="padding: 0; margin: 0">
+                  <blockquote class="message">{{log.note}}</blockquote>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+
+
+<script>
+  // var theme = {
+  //     color: [
+  //         '#26B99A', '#34495E', '#BDC3C7', '#3498DB',
+  //         '#9B59B6', '#8abb6f', '#759c6a', '#bfd3b7'
+  //     ],
+
+  //     title: {
+  //         itemGap: 8,
+  //         textStyle: {
+  //             fontWeight: 'normal',
+  //             color: '#408829'
+  //         }
+  //     },
+
+  //     dataRange: {
+  //         color: ['#1f610a', '#97b58d']
+  //     },
+
+  //     toolbox: {
+  //         color: ['#408829', '#408829', '#408829', '#408829']
+  //     },
+
+  //     tooltip: {
+  //         backgroundColor: 'rgba(0,0,0,0.5)',
+  //         axisPointer: {
+  //             type: 'line',
+  //             lineStyle: {
+  //                 color: '#408829',
+  //                 type: 'dashed'
+  //             },
+  //             crossStyle: {
+  //                 color: '#408829'
+  //             },
+  //             shadowStyle: {
+  //                 color: 'rgba(200,200,200,0.3)'
+  //             }
+  //         }
+  //     },
+
+  //     dataZoom: {
+  //         dataBackgroundColor: '#eee',
+  //         fillerColor: 'rgba(64,136,41,0.2)',
+  //         handleColor: '#408829'
+  //     },
+  //     grid: {
+  //         borderWidth: 0
+  //     },
+
+  //     categoryAxis: {
+  //         axisLine: {
+  //             lineStyle: {
+  //                 color: '#408829'
+  //             }
+  //         },
+  //         splitLine: {
+  //             lineStyle: {
+  //                 color: ['#eee']
+  //             }
+  //         }
+  //     },
+
+  //     valueAxis: {
+  //         axisLine: {
+  //             lineStyle: {
+  //                 color: '#408829'
+  //             }
+  //         },
+  //         splitArea: {
+  //             show: true,
+  //             areaStyle: {
+  //                 color: ['rgba(250,250,250,0.1)', 'rgba(200,200,200,0.1)']
+  //             }
+  //         },
+  //         splitLine: {
+  //             lineStyle: {
+  //                 color: ['#eee']
+  //             }
+  //         }
+  //     },
+  //     timeline: {
+  //         lineStyle: {
+  //             color: '#408829'
+  //         },
+  //         controlStyle: {
+  //             normal: {color: '#408829'},
+  //             emphasis: {color: '#408829'}
+  //         }
+  //     },
+
+  //     k: {
+  //         itemStyle: {
+  //             normal: {
+  //                 color: '#68a54a',
+  //                 color0: '#a9cba2',
+  //                 lineStyle: {
+  //                     width: 1,
+  //                     color: '#408829',
+  //                     color0: '#86b379'
+  //                 }
+  //             }
+  //         }
+  //     },
+  //     map: {
+  //         itemStyle: {
+  //             normal: {
+  //                 areaStyle: {
+  //                     color: '#ddd'
+  //                 },
+  //                 label: {
+  //                     textStyle: {
+  //                         color: '#c12e34'
+  //                     }
+  //                 }
+  //             },
+  //             emphasis: {
+  //                 areaStyle: {
+  //                     color: '#99d2dd'
+  //                 },
+  //                 label: {
+  //                     textStyle: {
+  //                         color: '#c12e34'
+  //                     }
+  //                 }
+  //             }
+  //         }
+  //     },
+  //     force: {
+  //         itemStyle: {
+  //             normal: {
+  //                 linkStyle: {
+  //                     strokeColor: '#408829'
+  //                 }
+  //             }
+  //         }
+  //     },
+  //     chord: {
+  //         padding: 4,
+  //         itemStyle: {
+  //             normal: {
+  //                 lineStyle: {
+  //                     width: 1,
+  //                     color: 'rgba(128, 128, 128, 0.5)'
+  //                 },
+  //                 chordStyle: {
+  //                     lineStyle: {
+  //                         width: 1,
+  //                         color: 'rgba(128, 128, 128, 0.5)'
+  //                     }
+  //                 }
+  //             },
+  //             emphasis: {
+  //                 lineStyle: {
+  //                     width: 1,
+  //                     color: 'rgba(128, 128, 128, 0.5)'
+  //                 },
+  //                 chordStyle: {
+  //                     lineStyle: {
+  //                         width: 1,
+  //                         color: 'rgba(128, 128, 128, 0.5)'
+  //                     }
+  //                 }
+  //             }
+  //         }
+  //     },
+  //     gauge: {
+  //         startAngle: 225,
+  //         endAngle: -45,
+  //         axisLine: {
+  //             show: true,
+  //             lineStyle: {
+  //                 color: [[0.2, '#86b379'], [0.8, '#68a54a'], [1, '#408829']],
+  //                 width: 8
+  //             }
+  //         },
+  //         axisTick: {
+  //             splitNumber: 10,
+  //             length: 12,
+  //             lineStyle: {
+  //                 color: 'auto'
+  //             }
+  //         },
+  //         axisLabel: {
+  //             textStyle: {
+  //                 color: 'auto'
+  //             }
+  //         },
+  //         splitLine: {
+  //             length: 18,
+  //             lineStyle: {
+  //                 color: 'auto'
+  //             }
+  //         },
+  //         pointer: {
+  //             length: '90%',
+  //             color: 'auto'
+  //         },
+  //         title: {
+  //             textStyle: {
+  //                 color: '#333'
+  //             }
+  //         },
+  //         detail: {
+  //             textStyle: {
+  //                 color: 'auto'
+  //             }
+  //         }
+  //     },
+  //     textStyle: {
+  //         fontFamily: 'Arial, Verdana, sans-serif'
+  //     }
+  // };
+
+  // var echartBar = echarts.init(document.getElementById('mainb'), theme);
+</script>

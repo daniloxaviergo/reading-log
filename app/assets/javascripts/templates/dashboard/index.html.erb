@@ -1,0 +1,583 @@
+<!-- page content -->
+<div ng-controller="Dashboard::IndexController" ng-init="init()" class="right_col" role="main">
+
+  <h1>Dashboard</h1>
+  <div class="nga-fast nga-fade row tile_count" ng-show="loaded" style="margin:0; margin-top: 15px">
+    <div class="row title_count" style="margin-bottom: 10px">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 tile_stats_count">
+        <div class="count_top"><i class="fa fa-user"></i> Total Pages Week</div>
+        <span class="count">
+          {{dados.total_pages || 0}}
+        </span>
+
+        <span style="font-size: 25px"> / {{dados.last_week_pages || 0}}</span>
+        <div class="count_bottom">
+          <i ng-class="{'green':dados.total_last_per > 1, 'red': dados.total_last_per < 1}">
+            <i class="fa" ng-class="{'fa-sort-asc': dados.total_last_per > 1, 'fa-sort-desc': dados.total_last_per < 1}"></i>
+            {{((dados.total_last_per-1)*100).toFixed(3) || 0}}%
+          </i> From last Week
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 hidden-xs tile_stats_count">
+        <span class="count_top"><i class="fa fa-clock-o"></i> Média do dia</span>
+        <div class="count">{{dados.media_periodo}}</div>
+        <span class="count_bottom">
+          <i ng-class="{'green':dados.media_periodo_last_per > 1, 'red': dados.media_periodo_last_per < 1}">
+            <i class="fa" ng-class="{'fa-sort-asc': dados.media_periodo_last_per > 1, 'fa-sort-desc': dados.media_periodo_last_per < 1}"></i>
+            {{((dados.media_periodo_last_per-1)*100).toFixed(5)}}%
+          </i> From all Week
+        </span>
+      </div>
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Média do dia estimada</span>
+        <div class="count">{{dados.media_dia_estimulada || 0}}</div>
+        <div class="count_bottom" style="margin-top: 19px"></div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12 hidden-sm hidden-xs tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Média de pages geral</span>
+        <div class="count">{{dados.media_geral || 0}}</div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12 hidden-md hidden-sm hidden-xs tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Máximo do dia</span>
+        <div class="count">{{dados.maximo_dia || 0}}</div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 hidden-sm hidden-md hidden-lg">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Lidas hoje</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div ng-if="isMobile" id="paginas_lidas_graph" style="height:230px; width: 100%"></div>
+
+          <div ng-if="!isMobile" class="alert alert-success alert-dismissible fade in" role="alert">
+            <strong>Atualize esta página!</strong>
+            <i class="fa fa-refresh fa-spin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Efetivo x Estimado</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div ng-if="!isMobile" id="mainb" style="height:500px; width: 100%"></div>
+
+          <div ng-if="isMobile" class="alert alert-success alert-dismissible fade in" role="alert">
+            <strong>Atualize esta página!</strong>
+            <i class="fa fa-refresh fa-spin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Lidos últimos dias</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <ul class="nav nav-tabs">
+            <li ng-class="{'active': days_7}">
+              <a ng-click="set_days('days_7')">7 <span class="hidden-xs">dias</span></a>
+            </li>
+            <li ng-class="{'active': days_15}">
+              <a ng-click="set_days('days_15')"">15 <span class="hidden-xs">dias</span></a>
+            </li>
+            <li ng-class="{'active': days_30}">
+              <a ng-click="set_days('days_30')">30 <span class="hidden-xs">dias</span></a>
+            </li>
+            <li ng-class="{'active': days_90}" class="hidden-xs">
+              <a ng-click="set_days('days_90')">90 <span class="hidden-xs">dias</span></a>
+            </li>
+          </ul>
+          <table class="table table-striped" style="width: 100%">
+            <thead>
+              <tr>
+                <th class="hidden-xs">#</th>
+                <th>Nome</th>
+                <th>Pages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in items.list">
+                <th scope="row" class="hidden-xs"><a href="/projects/{{item.id}}">#{{item.id}}</a></th>
+                <td>{{item.nome}}</td>
+                <td>{{item.readed}}</td>
+              </tr>
+              <tr>
+                <th scope="row" class="hidden-xs"></th>
+                <th>{{items.periodo}}</td>
+                <th>{{items.readed}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12 hidden-xs" ng-controller="Project::IndexController">
+
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Status geral</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <table ng-if="!isMobile" class="table table-striped">
+            <thead>
+              <tr>
+                <th class="hidden-xs">#</th>
+                <th>Nome</th>
+                <th>Pages</th>
+                <th class="hidden-xs" style="width: 20px"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr ng-repeat="item in dados.geral_reads" ng-init="logs.form.open(item, true)"> -->
+              <tr ng-repeat="item in dados.geral_reads" ng-init="project = item; project.isModal = true">
+                <th scope="row" class="hidden-xs"><a href="/projects/{{item.id}}">#{{item.id}}</a></th>
+                <td>{{item.nome}}</td>
+                <td>
+                  <div ng-switch on="item.status">
+                    <div ng-switch-when="em_andamento">
+                      <!-- <button type="button" class="btn btn-info btn-xs">Em Andamento</button> -->
+                      <div class="progress progress_sm" style="margin-bottom: 0px">
+                        <div class="progress-bar progress-bar-info" role="progressbar"
+                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:{{item.progresso}}%">
+                        </div>
+                      </div>
+                    </div>
+                    <div ng-switch-when="dormindo">
+                      <!-- <button type="button" class="btn btn-warning btn-xs">Dormindo</button> -->
+                      <div class="progress progress_sm" style="margin-bottom: 0px">
+                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:{{item.progresso}}%">
+                        </div>
+                      </div>
+                    </div>
+                    <div ng-switch-when="parado">
+                      <!-- <button type="button" class="btn btn-danger btn-xs">Parado</button> -->
+                      <div class="progress progress_sm" style="margin-bottom: 0px">
+                        <div class="progress-bar progress-bar-danger" role="progressbar"
+                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:{{item.progresso}}%">
+                        </div>
+                      </div>
+                    </div>
+                    <div ng-switch-default>Não mapeado</div>
+                  </div>
+
+                  <small>
+                    {{item.progresso}}% <span class="hidden-xs">Complete</span> - {{item.page}}/{{item.total_page}}
+                  </small>
+                </td>
+
+                <td class="hidden-xs pull-right">
+                  <button ng-click="showMenu = !showMenu" type="button" class="btn btn-round btn-default dropdown-toggle">
+                    <i class="fa fa-navicon"></i>
+                  </button>
+                  <div style="position: absolute; float: right; right: 10px;" ng-class="{'open': showMenu, '': !showMenu}">
+                    <ul class="dropdown-menu" style="position: relative; font-size: 14px">
+                      <li>
+                        <div class="modal modal-nova-leitura{{$index}}">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">{{item.nome}}</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div ng-include src="'/assets/templates/projects/logs/form.html'"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <a data-toggle="modal" data-target=".modal-nova-leitura{{$index}}" style="padding: 10px">
+                          <i class="fa fa-file-text-o"></i>
+                          Nova leitura
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/projects/{{item.id}}" style="padding: 10px">
+                          <i class="fa fa-line-chart"></i>
+                          Visão Geral
+                        </a>
+                      </li>
+                    </ul>
+                  </div>  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div ng-if="isMobile" class="alert alert-success alert-dismissible fade in" role="alert">
+            <strong>Atualize esta página!</strong>
+            <i class="fa fa-refresh fa-spin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Progresso Mediana</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <ul ng-if="!isMobile" class="nav nav-tabs">
+            <li ng-class="{'active': g_dom}"><a ng-click="set_graph_week(0)">Domingo</a></li>
+            <li ng-class="{'active': g_seg}"><a ng-click="set_graph_week(1)">Segunda</a></li>
+            <li ng-class="{'active': g_ter}"><a ng-click="set_graph_week(2)">Terça</a></li>
+            <li ng-class="{'active': g_qua}"><a ng-click="set_graph_week(3)">Quarta</a></li>
+            <li ng-class="{'active': g_qui}"><a ng-click="set_graph_week(4)">Quinta</a></li>
+            <li ng-class="{'active': g_sex}"><a ng-click="set_graph_week(5)">Sexta</a></li>
+            <li ng-class="{'active': g_sab}"><a ng-click="set_graph_week(6)">Sábado</a></li>
+          </ul>
+          <div ng-if="!isMobile" id="progresso_mediana" style="height:500px; width: 100%"></div>
+
+          <div ng-if="isMobile" class="alert alert-success alert-dismissible fade in" role="alert">
+            <strong>Atualize esta página!</strong>
+            <i class="fa fa-refresh fa-spin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 hidden-sm hidden-md hidden-lg">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Semanal</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div ng-if="isMobile" id="semanal_graph_mobile" style="height:330px; width: 100%"></div>
+
+          <div ng-if="!isMobile" class="alert alert-success alert-dismissible fade in" role="alert">
+            <strong>Atualize esta página!</strong>
+            <i class="fa fa-refresh fa-spin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Semanal</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div ng-if="!isMobile" id="semanal_graph" style="height:500px; width: 100%"></div>
+
+          <div ng-if="isMobile" class="alert alert-success alert-dismissible fade in" role="alert">
+            <strong>Atualize esta página!</strong>
+            <i class="fa fa-refresh fa-spin"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- /page content -->
+
+<script>
+  // var theme = {
+  //     color: [
+  //         '#26B99A', '#34495E', '#BDC3C7', '#3498DB',
+  //         '#9B59B6', '#8abb6f', '#759c6a', '#bfd3b7'
+  //     ],
+
+  //     title: {
+  //         itemGap: 8,
+  //         textStyle: {
+  //             fontWeight: 'normal',
+  //             color: '#408829'
+  //         }
+  //     },
+
+  //     dataRange: {
+  //         color: ['#1f610a', '#97b58d']
+  //     },
+
+  //     toolbox: {
+  //         color: ['#408829', '#408829', '#408829', '#408829']
+  //     },
+
+  //     tooltip: {
+  //         backgroundColor: 'rgba(0,0,0,0.5)',
+  //         axisPointer: {
+  //             type: 'line',
+  //             lineStyle: {
+  //                 color: '#408829',
+  //                 type: 'dashed'
+  //             },
+  //             crossStyle: {
+  //                 color: '#408829'
+  //             },
+  //             shadowStyle: {
+  //                 color: 'rgba(200,200,200,0.3)'
+  //             }
+  //         }
+  //     },
+
+  //     dataZoom: {
+  //         dataBackgroundColor: '#eee',
+  //         fillerColor: 'rgba(64,136,41,0.2)',
+  //         handleColor: '#408829'
+  //     },
+  //     grid: {
+  //         borderWidth: 0
+  //     },
+
+  //     categoryAxis: {
+  //         axisLine: {
+  //             lineStyle: {
+  //                 color: '#408829'
+  //             }
+  //         },
+  //         splitLine: {
+  //             lineStyle: {
+  //                 color: ['#eee']
+  //             }
+  //         }
+  //     },
+
+  //     valueAxis: {
+  //         axisLine: {
+  //             lineStyle: {
+  //                 color: '#408829'
+  //             }
+  //         },
+  //         splitArea: {
+  //             show: true,
+  //             areaStyle: {
+  //                 color: ['rgba(250,250,250,0.1)', 'rgba(200,200,200,0.1)']
+  //             }
+  //         },
+  //         splitLine: {
+  //             lineStyle: {
+  //                 color: ['#eee']
+  //             }
+  //         }
+  //     },
+  //     timeline: {
+  //         lineStyle: {
+  //             color: '#408829'
+  //         },
+  //         controlStyle: {
+  //             normal: {color: '#408829'},
+  //             emphasis: {color: '#408829'}
+  //         }
+  //     },
+
+  //     k: {
+  //         itemStyle: {
+  //             normal: {
+  //                 color: '#68a54a',
+  //                 color0: '#a9cba2',
+  //                 lineStyle: {
+  //                     width: 1,
+  //                     color: '#408829',
+  //                     color0: '#86b379'
+  //                 }
+  //             }
+  //         }
+  //     },
+  //     map: {
+  //         itemStyle: {
+  //             normal: {
+  //                 areaStyle: {
+  //                     color: '#ddd'
+  //                 },
+  //                 label: {
+  //                     textStyle: {
+  //                         color: '#c12e34'
+  //                     }
+  //                 }
+  //             },
+  //             emphasis: {
+  //                 areaStyle: {
+  //                     color: '#99d2dd'
+  //                 },
+  //                 label: {
+  //                     textStyle: {
+  //                         color: '#c12e34'
+  //                     }
+  //                 }
+  //             }
+  //         }
+  //     },
+  //     force: {
+  //         itemStyle: {
+  //             normal: {
+  //                 linkStyle: {
+  //                     strokeColor: '#408829'
+  //                 }
+  //             }
+  //         }
+  //     },
+  //     chord: {
+  //         padding: 4,
+  //         itemStyle: {
+  //             normal: {
+  //                 lineStyle: {
+  //                     width: 1,
+  //                     color: 'rgba(128, 128, 128, 0.5)'
+  //                 },
+  //                 chordStyle: {
+  //                     lineStyle: {
+  //                         width: 1,
+  //                         color: 'rgba(128, 128, 128, 0.5)'
+  //                     }
+  //                 }
+  //             },
+  //             emphasis: {
+  //                 lineStyle: {
+  //                     width: 1,
+  //                     color: 'rgba(128, 128, 128, 0.5)'
+  //                 },
+  //                 chordStyle: {
+  //                     lineStyle: {
+  //                         width: 1,
+  //                         color: 'rgba(128, 128, 128, 0.5)'
+  //                     }
+  //                 }
+  //             }
+  //         }
+  //     },
+  //     gauge: {
+  //         startAngle: 225,
+  //         endAngle: -45,
+  //         axisLine: {
+  //             show: true,
+  //             lineStyle: {
+  //                 color: [[0.2, '#86b379'], [0.8, '#68a54a'], [1, '#408829']],
+  //                 width: 8
+  //             }
+  //         },
+  //         axisTick: {
+  //             splitNumber: 10,
+  //             length: 12,
+  //             lineStyle: {
+  //                 color: 'auto'
+  //             }
+  //         },
+  //         axisLabel: {
+  //             textStyle: {
+  //                 color: 'auto'
+  //             }
+  //         },
+  //         splitLine: {
+  //             length: 18,
+  //             lineStyle: {
+  //                 color: 'auto'
+  //             }
+  //         },
+  //         pointer: {
+  //             length: '90%',
+  //             color: 'auto'
+  //         },
+  //         title: {
+  //             textStyle: {
+  //                 color: '#333'
+  //             }
+  //         },
+  //         detail: {
+  //             textStyle: {
+  //                 color: 'auto'
+  //             }
+  //         }
+  //     },
+  //     textStyle: {
+  //         fontFamily: 'Arial, Verdana, sans-serif'
+  //     }
+  // };
+
+  // var echartBar = echarts.init(document.getElementById('mainb'), theme);
+  // var progresso_mediana = echarts.init(document.getElementById('progresso_mediana'), theme);
+
+  // progresso_mediana.setOption({
+  //   title: {
+  //     text: 'Graph title',
+  //     subtext: 'Graph Sub-text'
+  //   },
+  //   tooltip: {
+  //     trigger: 'axis'
+  //   },
+  //   legend: {
+  //     data: ['sales', 'purchases']
+  //   },
+  //   toolbox: {
+  //     show: false
+  //   },
+  //   calculable: false,
+  //   xAxis: [{
+  //     type: 'category',
+  //     data: ['1?', '2?', '3?', '4?', '5?', '6?', '7?', '8?', '9?', '10?', '11?', '12?']
+  //   }],
+  //   yAxis: [{
+  //     type: 'value'
+  //   }],
+  //   series: [{
+  //     name: 'sales',
+  //     type: 'bar',
+  //     data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+  //     markPoint: {
+  //       data: [{
+  //         type: 'max',
+  //         name: '???'
+  //       }, {
+  //         type: 'min',
+  //         name: '???'
+  //       }]
+  //     },
+  //     markLine: {
+  //       data: [{
+  //         type: 'average',
+  //         name: '???'
+  //       }]
+  //     }
+  //   }, {
+  //     name: 'purchases',
+  //     type: 'bar',
+  //     data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+  //     markPoint: {
+  //       data: [{
+  //         name: 'sales',
+  //         value: 182.2,
+  //         xAxis: 7,
+  //         yAxis: 183,
+  //       }, {
+  //         name: 'purchases',
+  //         value: 2.3,
+  //         xAxis: 11,
+  //         yAxis: 3
+  //       }]
+  //     },
+  //     markLine: {
+  //       data: [{
+  //         type: 'average',
+  //         name: '???'
+  //       }]
+  //     }
+  //   }]
+  // });
+
+  // echartBar.resize()
+</script>

@@ -1,0 +1,54 @@
+<!-- page content -->
+<div ng-controller="Project::Logs::FormController" ng-init="init()">
+  <div class="page-title">    
+    <div class="title">
+      <a ng-hide="project.isModal" ng-click="logs.form.close()" class="btn btn-default" style="float: left;margin-right: 12px;padding-top: 2px;padding-bottom: 2px;">
+        <i class="fa fa-reply"></i>
+      </a>
+      <h3 class="hidden-xs">{{project.nome}} - <span>{{project.total_page}}pgs</span></h3>
+      <h4 class="visible-xs">{{project.nome}} - <span>{{project.total_page}}pgs</span></h4>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_content">
+          <br>
+          <form class="form-horizontal form-label-left">
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                Last Page
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="text" ng-model="project.log.start_page" disabled="disabled" required="required" class="form-control col-md-7 col-xs-12">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                Page
+              </label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="text" ng-keyup="save_storage()" ng-model="project.log.end_page" required="required" class="form-control col-md-7 col-xs-12">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <textarea ng-keyup="save_storage()" froala="froalaOptions" ng-model="project.log.note"></textarea>
+              </div>
+            </div>
+
+            <div class="actions">
+              <div class="pull-right">
+                <button ng-show="project.isModal" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" ng-click="submitLog()">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- page content -->

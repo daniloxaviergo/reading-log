@@ -1,0 +1,226 @@
+<!-- page content -->
+<div ng-controller="Project::IndexController" ng-init="init()" class="right_col" role="main" style="margin-top: 40px">
+<!--
+  <div class="pull-left t-p-md">
+    <a ng-click="teste = !teste" class="btn btn-default">change</a>
+  </div>
+ -->
+
+
+  <div ng-if="form.closed && logs.form.closed">
+    <div class="page-title">
+      <div class="title_left form-group" style="margin-top: 10px">
+        <div class="form-group pull-left">
+          <a ng-click="form.open()" class="btn btn-default">
+            <i class="fa fa-plus"></i>
+            <span class="hidden-xs">Novo</span> Projeto
+          </a>
+        </div>
+      </div>
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search" style="z-index: 0">
+          <div class="input-group">
+            <input ng-model="query" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row nga-fast nga-fade" ng-show="loaded || logs.form.closed" class="row">
+      <div class="col-xs-12" style="min-height:780px">
+        <div class="x_panel" style="padding: 0px">
+          <div class="x_title">
+            <span style="font-size: 24px; color: #73879C;">Projetos</span>
+            <div class="visible-xs btn-group pull-right" ng-class="{'open': $scope.showFilter, '': !$scope.showFilter}" style="margin-top: 3px">
+              <button ng-click="$scope.showFilter = !$scope.showFilter" class="btn btn-default dropdown-toggle" type="button">
+                Status <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li ng-click="toggle_filter('aguardando_inicio');">
+                  <a>
+                    <i class="fa" ng-class="{'fa-circle': selected_filter('aguardando_inicio'), 'fa-circle-thin': !selected_filter('aguardando_inicio')}"></i>
+                    Aguardando início
+                  </a>
+                </li>
+                <li ng-click="toggle_filter('finalizado');">
+                  <a>
+                    <i class="fa" ng-class="{'fa-circle green': selected_filter('finalizado'), 'fa-circle-thin': !selected_filter('finalizado')}"></i>
+                    Finalizado
+                  </a>
+                </li>
+                <li ng-click="toggle_filter('em_andamento');">
+                  <a>
+                    <i class="fa" ng-class="{'fa-circle blue': selected_filter('em_andamento'), 'fa-circle-thin': !selected_filter('em_andamento')}"></i>
+                    Em andamento
+                  </a>
+                </li>
+                <li ng-click="toggle_filter('dormindo');">
+                  <a>
+                    <i class="fa" ng-class="{'fa-circle orange': selected_filter('dormindo'), 'fa-circle-thin': !selected_filter('dormindo')}"></i>
+                    Dormindo
+                  </a>
+                </li>
+                <li ng-click="toggle_filter('parado');">
+                  <a>
+                    <i class="fa" ng-class="{'fa-circle red': selected_filter('parado'), 'fa-circle-thin': !selected_filter('parado')}"></i>
+                    Parado
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="hidden-xs btn-group btn-group-sm pull-right" data-toggle="buttons" style="margin-top: 5px; z-index: 0">
+              <label class="btn btn-default" ng-class="{'active': selected_filter('aguardando_inicio')}">
+                <input type="checkbox" ng-click="toggle_filter('aguardando_inicio');" ng-checked="selected_filter('aguardando_inicio')">
+                <span class="label label-default">&nbsp;</span>
+                <!-- Aguardando início -->
+              </label>
+              <label class="btn btn-default" ng-class="{'active': selected_filter('finalizado')}">
+                <input type="checkbox" ng-click="toggle_filter('finalizado');" ng-checked="selected_filter('finalizado')">
+                <span class="label label-success">&nbsp;</span>
+                <!-- Finalizado -->
+              </label>
+              <label class="btn btn-default" ng-class="{'active': selected_filter('em_andamento')}">
+                <input type="checkbox" ng-click="toggle_filter('em_andamento');" ng-checked="selected_filter('em_andamento')">
+                <span class="label label-info">&nbsp;</span>
+                <!-- Em Andamento -->
+              </label>
+              <label class="btn btn-default" ng-class="{'active': selected_filter('dormindo')}">
+                <input type="checkbox" ng-click="toggle_filter('dormindo');" ng-checked="selected_filter('dormindo')">
+                <span class="label label-warning">&nbsp;</span>
+
+                <!-- Dormindo -->
+              </label>
+              <label class="btn btn-default" ng-class="{'active': selected_filter('parado')}">
+                <input type="checkbox" ng-click="toggle_filter('parado');" ng-checked="selected_filter('parado')">
+                <span class="label label-danger">&nbsp;</span>
+
+                <!-- Parado -->
+              </label>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="col-xs-12">
+              <table class="table table-striped projects">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th style="width: 20px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="project in projects | filter:query | filter:status_filter"
+                      style="border-left-width: 3px; border-left-style: solid;"
+                      ng-class="{'border-left-dark': project.status == 'aguardando_inicio',
+                                 'border-left-green': project.status == 'finalizado',
+                                 'border-left-blue': project.status == 'em_andamento',
+                                 'border-left-orange': project.status == 'dormindo',
+                                 'border-left-red': project.status == 'parado', }"
+                      >
+                    <td>
+                      <a href="/projects/{{project.id}}">#{{project.id}}</a>
+                    </td>
+                    <td>
+                      {{project.nome}}
+                      <div class="progress progress_sm" style="margin-bottom: 0">
+                        <div class="progress-bar progress-bar-success" role="progressbar"
+                        aria-valuenow="{{project.progresso}}" aria-valuemin="0" aria-valuemax="100" style="width:{{project.progresso}}%">
+                        </div>
+                      </div>
+
+                      <small>
+                        {{project.progresso}}% <span class="hidden-xs">Complete</span> - {{project.page}}/{{project.total_page}}
+                      </small>
+                  </small>
+                    </td>
+                    <td class="pull-right">
+                      <button ng-click="showMenu = !showMenu" type="button" class="btn btn-round btn-default dropdown-toggle">
+                        <i class="fa fa-navicon"></i>
+                      </button>
+                      <div style="position: absolute; float: right; right: 10px;" ng-class="{'open': showMenu, '': !showMenu}">
+                        <ul class="dropdown-menu" style="position: relative; font-size: 14px">
+                          <li>
+                            <a ng-click="logs.form.open(project)" style="padding: 10px">
+                              <i class="fa fa-file-text-o"></i>
+                              Nova leitura
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/projects/{{project.id}}" style="padding: 10px">
+                              <i class="fa fa-line-chart"></i>
+                              Visão Geral
+                            </a>
+                          </li>
+                        </ul>
+                      </div>  
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- tabela antiga nao utilizada -->
+              <table ng-if="false" class="table table-striped projects">
+                <thead>
+                  <tr>
+                    <th class="hidden-xs">Código</th>
+                    <th>Nome</th>
+                    <th>Progresso</th>
+                    <th class="hidden-xs">Status</th>
+                    <th style="width: 30%"> #Edit </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="project in projects | filter:query | filter:status_filter">
+                    <td class="hidden-xs"><a href="/projects/{{project.id}}">#{{project.id}}</a></td>
+                    <td>{{project.nome}}</td>
+                    <td class="project_progress">
+                      <div class="progress progress_sm">
+                        <div class="progress-bar progress-bar-success" role="progressbar"
+                        aria-valuenow="{{project.progresso}}" aria-valuemin="0" aria-valuemax="100" style="width:{{project.progresso}}%">
+                        </div>
+                      </div>
+                      <small>{{project.progresso}}% <span class="hidden-xs">Complete</span></small>
+                    </td>
+                    <td class="hidden-xs">
+                      <div ng-switch on="project.status">
+                        <div ng-switch-when="aguardando_inicio">
+                          <button type="button" class="btn btn-default btn-xs">Aguardando início</button>
+                        </div>
+                        <div ng-switch-when="finalizado">
+                          <button type="button" class="btn btn-success btn-xs">Finalizado</button>
+                        </div>
+                        <div ng-switch-when="em_andamento">
+                          <button type="button" class="btn btn-info btn-xs">Em Andamento</button>
+                        </div>
+                        <div ng-switch-when="dormindo">
+                          <button type="button" class="btn btn-warning btn-xs">Dormindo</button>
+                        </div>
+                        <div ng-switch-when="parado">
+                          <button type="button" class="btn btn-danger btn-xs">Parado</button>
+                        </div>
+                        <div ng-switch-default>Não mapeado</div>
+                      </div>
+                    </td>
+                    <td>
+                      <a ng-click="logs.form.open(project)" class="btn btn-warning btn-xs"><i class="fa fa-history"></i> Log </a>
+                      <a href="#" class="hidden-xs btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                      <a href="#" class="hidden-xs btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                      <a href="#" class="hidden-xs btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nga-fast nga-fade" ng-show="logs.form.opened" ng-if="logs.form.opened" ng-include src="'/assets/templates/projects/logs/form.html'"></div>
+</div>
+<!-- /page content -->

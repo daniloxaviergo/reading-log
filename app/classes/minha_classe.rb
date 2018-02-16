@@ -25,7 +25,8 @@ class MinhaClasse
     dates = Log.order(:data).map { |l| l.data.to_date }.uniq
     dates.each do |date|
        # strftime('%w', data);
-      logs = Log.where('data < ?', date.end_of_day).where("strftime('%w', data) = '?'", date.wday)
+      # logs = Log.where('data < ?', date.end_of_day).where("strftime('%w', data) = '?'", date.wday)
+      logs = Log.where('data < ?', date.end_of_day).where("extract(dow from data) = '?'", date.wday)
 
       series_data_semana["#{date.wday}"] ||= []
 

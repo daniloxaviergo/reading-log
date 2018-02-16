@@ -1365,7 +1365,7 @@ db = YAML.load("
 - :nome: Sobrados e Mucambos
   :total_page: 815
   :inicio: '2017-09-28'
-  :page: 565
+  :page: 661
   :logs:
   - :data: '2017-09-28T21:47:05-03:00'
     :start_page: 105
@@ -1471,6 +1471,33 @@ db = YAML.load("
     :end_page: 565
     :note: 
     :from_web: true
+  - :data: '2018-01-23T16:01:00-02:00'
+    :start_page: 565
+    :end_page: 578
+  - :data: '2018-02-03T19:35:59-02:00'
+    :start_page: 578
+    :end_page: 586
+  - :data: '2018-02-11T09:59:42-02:00'
+    :start_page: 586
+    :end_page: 619
+    :note: 
+    :from_web: true
+  - :data: '2018-02-12T15:09:53-02:00'
+    :start_page: 619
+    :end_page: 634
+    :note: 
+    :from_web: true
+  - :data: '2018-02-13T10:07:28-02:00'
+    :start_page: 634
+    :end_page: 646
+  - :data: '2018-02-13T14:37:35-02:00'
+    :start_page: 646
+    :end_page: 652
+    :note: 
+    :from_web: true
+  - :data: '2018-02-15T17:43:42-02:00'
+    :start_page: 652
+    :end_page: 661
 - :nome: Catena Aurea - Setembro
   :total_page: 86
   :inicio: '2017-09-30'
@@ -1724,7 +1751,7 @@ db = YAML.load("
 - :nome: Intimidade Divina
   :total_page: 774
   :inicio: '2017-10-29'
-  :page: 158
+  :page: 373
   :logs:
   - :data: '2017-12-03T14:15:22-02:00'
     :start_page: 20
@@ -1810,6 +1837,91 @@ db = YAML.load("
   - :data: '2018-01-02T22:03:25-02:00'
     :start_page: 154
     :end_page: 158
+  - :data: '2018-01-03T21:59:21-02:00'
+    :start_page: 158
+    :end_page: 161
+  - :data: '2018-01-04T22:11:29-02:00'
+    :start_page: 161
+    :end_page: 165
+    :note: 
+    :from_web: true
+  - :data: '2018-01-08T21:17:59-02:00'
+    :start_page: 165
+    :end_page: 180
+    :note: 
+    :from_web: true
+  - :data: '2018-01-09T23:08:06-02:00'
+    :start_page: 180
+    :end_page: 183
+  - :data: '2018-01-11T22:28:43-02:00'
+    :start_page: 183
+    :end_page: 190
+  - :data: '2018-01-12T22:30:58-02:00'
+    :start_page: 190
+    :end_page: 194
+  - :data: '2018-01-13T23:11:19-02:00'
+    :start_page: 194
+    :end_page: 197
+  - :data: '2018-01-14T16:31:32-02:00'
+    :start_page: 197
+    :end_page: 201
+  - :data: '2018-01-15T21:57:41-02:00'
+    :start_page: 201
+    :end_page: 204
+  - :data: '2018-01-17T22:52:49-02:00'
+    :start_page: 204
+    :end_page: 208
+  - :data: '2018-01-18T22:24:35-02:00'
+    :start_page: 208
+    :end_page: 212
+  - :data: '2018-01-19T23:08:11-02:00'
+    :start_page: 212
+    :end_page: 215
+  - :data: '2018-01-21T14:35:31-02:00'
+    :start_page: 215
+    :end_page: 225
+  - :data: '2018-01-22T21:49:52-02:00'
+    :start_page: 225
+    :end_page: 229
+  - :data: '2018-01-23T23:04:26-02:00'
+    :start_page: 229
+    :end_page: 233
+  - :data: '2018-01-31T21:59:37-02:00'
+    :start_page: 300
+    :end_page: 318
+  - :data: '2018-02-01T22:42:39-02:00'
+    :start_page: 318
+    :end_page: 321
+  - :data: '2018-02-02T22:03:16-02:00'
+    :start_page: 321
+    :end_page: 325
+  - :data: '2018-02-03T22:42:17-02:00'
+    :start_page: 325
+    :end_page: 330
+  - :data: '2018-02-04T15:01:08-02:00'
+    :start_page: 330
+    :end_page: 333
+  - :data: '2018-02-05T22:57:29-02:00'
+    :start_page: 333
+    :end_page: 337
+  - :data: '2018-02-06T22:35:19-02:00'
+    :start_page: 337
+    :end_page: 340
+  - :data: '2018-02-07T22:27:11-02:00'
+    :start_page: 340
+    :end_page: 344
+  - :data: '2018-02-08T22:36:18-02:00'
+    :start_page: 344
+    :end_page: 347
+  - :data: '2018-02-12T21:35:29-02:00'
+    :start_page: 347
+    :end_page: 362
+  - :data: '2018-02-13T21:25:51-02:00'
+    :start_page: 362
+    :end_page: 366
+  - :data: '2018-02-15T21:09:48-02:00'
+    :start_page: 366
+    :end_page: 373
 - :nome: A nova ciência da política
   :total_page: 135
   :inicio: '2017-11-04'
@@ -2069,7 +2181,7 @@ db = YAML.load("
 - :nome: Valores Cristãos
   :total_page: 134
   :inicio: '2017-12-04'
-  :page: 111
+  :page: 134
   :logs:
   - :data: '2017-12-04T21:00:39-02:00'
     :start_page: 5
@@ -2108,10 +2220,13 @@ db = YAML.load("
     :end_page: 111
     :note: 
     :from_web: true
+  - :data: '2018-01-06T19:03:28-02:00'
+    :start_page: 111
+    :end_page: 134
 - :nome: Tudo menos Deus
   :total_page: 347
   :inicio: '2017-12-13'
-  :page: 282
+  :page: 347
   :logs:
   - :data: '2017-12-13T21:41:12-02:00'
     :start_page: 8
@@ -2165,6 +2280,15 @@ db = YAML.load("
   - :data: '2018-01-02T21:55:39-02:00'
     :start_page: 266
     :end_page: 282
+  - :data: '2018-01-03T15:34:50-02:00'
+    :start_page: 282
+    :end_page: 308
+  - :data: '2018-01-04T17:08:07-02:00'
+    :start_page: 308
+    :end_page: 322
+  - :data: '2018-01-06T18:21:36-02:00'
+    :start_page: 322
+    :end_page: 347
 - :nome: A máquina do tempo
   :total_page: 106
   :inicio: '2017-12-23'
@@ -2285,7 +2409,7 @@ db = YAML.load("
 - :nome: A Imaginação Educada
   :total_page: 134
   :inicio: '2017-12-29'
-  :page: 49
+  :page: 134
   :logs:
   - :data: '2017-12-29T11:39:09-02:00'
     :start_page: 10
@@ -2313,10 +2437,24 @@ db = YAML.load("
       ao tempo do jardim do Eden, um tempo perdido, onde a poesia ou literatura &eacute;
       uma tentativa de trazer esse sentimento para o leitor e o escritor. <br></p>'
     :from_web: true
+  - :data: '2018-01-14T10:21:36-02:00'
+    :start_page: 49
+    :end_page: 71
+    :note: 
+    :from_web: true
+  - :data: '2018-01-16T15:20:04-02:00'
+    :start_page: 71
+    :end_page: 92
+  - :data: '2018-01-18T17:50:55-02:00'
+    :start_page: 92
+    :end_page: 112
+  - :data: '2018-01-19T22:13:26-02:00'
+    :start_page: 112
+    :end_page: 134
 - :nome: Contos Machado
   :total_page: 334
   :inicio: '2017-12-29'
-  :page: 76
+  :page: 334
   :logs:
   - :data: '2017-12-29T15:20:19-02:00'
     :start_page: 14
@@ -2344,10 +2482,74 @@ db = YAML.load("
   - :data: '2018-01-02T11:17:03-02:00'
     :start_page: 67
     :end_page: 76
+  - :data: '2018-01-06T19:33:53-02:00'
+    :start_page: 76
+    :end_page: 80
+  - :data: '2018-01-11T16:22:58-02:00'
+    :start_page: 80
+    :end_page: 94
+  - :data: '2018-01-11T21:14:45-02:00'
+    :start_page: 94
+    :end_page: 103
+    :note: 
+    :from_web: true
+  - :data: '2018-01-17T22:52:35-02:00'
+    :start_page: 103
+    :end_page: 113
+  - :data: '2018-01-18T15:09:11-02:00'
+    :start_page: 113
+    :end_page: 121
+  - :data: '2018-01-18T22:13:53-02:00'
+    :start_page: 121
+    :end_page: 132
+  - :data: '2018-01-19T16:03:40-02:00'
+    :start_page: 132
+    :end_page: 152
+  - :data: '2018-01-19T23:07:59-02:00'
+    :start_page: 152
+    :end_page: 167
+  - :data: '2018-01-21T21:05:39-02:00'
+    :start_page: 167
+    :end_page: 183
+  - :data: '2018-01-22T15:31:07-02:00'
+    :start_page: 183
+    :end_page: 200
+  - :data: '2018-01-22T16:16:59-02:00'
+    :start_page: 200
+    :end_page: 210
+  - :data: '2018-01-22T19:39:40-02:00'
+    :start_page: 210
+    :end_page: 230
+  - :data: '2018-01-22T20:56:29-02:00'
+    :start_page: 230
+    :end_page: 238
+  - :data: '2018-01-23T13:21:42-02:00'
+    :start_page: 238
+    :end_page: 246
+  - :data: '2018-02-03T19:11:23-02:00'
+    :start_page: 246
+    :end_page: 253
+  - :data: '2018-02-07T21:27:24-02:00'
+    :start_page: 253
+    :end_page: 272
+  - :data: '2018-02-07T21:58:39-02:00'
+    :start_page: 272
+    :end_page: 279
+    :note: 
+    :from_web: true
+  - :data: '2018-02-08T16:52:14-02:00'
+    :start_page: 279
+    :end_page: 303
+  - :data: '2018-02-12T16:51:26-02:00'
+    :start_page: 303
+    :end_page: 313
+  - :data: '2018-02-12T17:37:28-02:00'
+    :start_page: 313
+    :end_page: 334
 - :nome: El hombre que amaba a los perros
   :total_page: 592
   :inicio: '2017-12-29'
-  :page: 18
+  :page: 26
   :logs:
   - :data: '2017-12-29T16:19:28-02:00'
     :start_page: 7
@@ -2356,6 +2558,14 @@ db = YAML.load("
       a esposa de Ivan, que vive em Cuba na mis&eacute;ria e que tem no entanto ao
       lado dela uma vida muito feliz, nunca contou a hist&oacute;ria que vai come&ccedil;ar
       simplismente por medo.<br></p>
+    :from_web: true
+  - :data: '2018-01-03T17:06:02-02:00'
+    :start_page: 18
+    :end_page: 26
+    :note: '<p style=\"\">?Por qu&ecirc; debia luchar ahora, se ya la Revoluci&oacute;n
+      llevaba diez a&ntilde;os en el poder? La respuesta se le iba haciendo cada d&iacute;a
+      m&aacute;s clara: para sacarla del abismo pervertidor de una reacci&oacute;n
+      empe&ntilde;ada em asesinar los mejores ideales de la civilizaci&oacute;n humana.</p>'
     :from_web: true
 - :nome: Pulp
   :total_page: 170
@@ -2426,7 +2636,7 @@ db = YAML.load("
 - :nome: O Erro de Narciso
   :total_page: 205
   :inicio: '2017-10-26'
-  :page: 158
+  :page: 205
   :logs:
   - :data: '2017-10-26T12:37:04-02:00'
     :start_page: 11
@@ -2500,14 +2710,514 @@ db = YAML.load("
   - :data: '2017-12-26T12:27:54-02:00'
     :start_page: 154
     :end_page: 158
+  - :data: '2018-01-19T14:38:44-02:00'
+    :start_page: 158
+    :end_page: 164
+  - :data: '2018-01-21T15:10:50-02:00'
+    :start_page: 164
+    :end_page: 170
+  - :data: '2018-01-22T21:49:38-02:00'
+    :start_page: 170
+    :end_page: 176
+  - :data: '2018-01-23T15:20:08-02:00'
+    :start_page: 176
+    :end_page: 183
+  - :data: '2018-02-03T17:03:48-02:00'
+    :start_page: 183
+    :end_page: 189
+    :note: 
+    :from_web: true
+  - :data: '2018-02-06T22:04:47-02:00'
+    :start_page: 189
+    :end_page: 199
+  - :data: '2018-02-07T21:46:24-02:00'
+    :start_page: 199
+    :end_page: 205
+    :note: 
+    :from_web: true
 - :nome: A vida como ela é
   :total_page: 979
   :inicio: '2018-01-03'
-  :page: 19
+  :page: 73
   :logs:
   - :data: '2018-01-03T09:57:08-02:00'
     :start_page: 11
     :end_page: 19
+  - :data: '2018-01-18T14:38:40-02:00'
+    :start_page: 19
+    :end_page: 35
+  - :data: '2018-01-21T15:47:55-02:00'
+    :start_page: 35
+    :end_page: 56
+  - :data: '2018-02-13T10:33:07-02:00'
+    :start_page: 56
+    :end_page: 73
+    :note: 
+    :from_web: true
+- :nome: Eu sou a lenda
+  :total_page: 92
+  :inicio: '2018-01-03'
+  :page: 92
+  :logs:
+  - :data: '2018-01-03T17:37:55-02:00'
+    :start_page: 3
+    :end_page: 9
+  - :data: '2018-01-03T21:01:16-02:00'
+    :start_page: 9
+    :end_page: 30
+    :note: 
+    :from_web: true
+  - :data: '2018-01-04T09:47:35-02:00'
+    :start_page: 30
+    :end_page: 44
+    :note: 
+    :from_web: true
+  - :data: '2018-01-04T11:20:51-02:00'
+    :start_page: 44
+    :end_page: 59
+    :note: 
+    :from_web: true
+  - :data: '2018-01-04T15:52:35-02:00'
+    :start_page: 59
+    :end_page: 92
+- :nome: Mao - A história desconhecida
+  :total_page: 795
+  :inicio: '2018-01-04'
+  :page: 795
+  :logs:
+  - :data: '2018-01-04T17:57:06-02:00'
+    :start_page: 13
+    :end_page: 13
+  - :data: '2018-01-04T17:57:18-02:00'
+    :start_page: 13
+    :end_page: 26
+    :note: <p style=\"\">&quot;O sr. Mao tamb&eacute;m prop&ocirc;s queimar todas as
+      cole&ccedil;&otilde;es de prosa e poesia posteriores &agrave;s dinastias Tang
+      e Sung de uma vez s&oacute;&quot;, escreveu um amigo em seu di&aacute;rio[Mao
+      deveria ter uns 18 anos]. Essa foi a primeira vez em que Mao mencionou um tema
+      que seria t&iacute;pico de seu regime - a destrui&ccedil;&atilde;o da cultura
+      chinesa.<br></p>
+    :from_web: true
+  - :data: '2018-01-04T18:41:04-02:00'
+    :start_page: 26
+    :end_page: 38
+    :note: '<p style=\"\">A atitude de Mao em rela&ccedil;&atilde;o &agrave; moralidade
+      tinha um centro, o eu acima de tudo: &quot;N&atilde;o concordo com a id&eacute;ia
+      de que, para ser moral, o motivo da nossa a&ccedil;&atilde;o deve ser beneficiar
+      os outros. A moralidade n&atilde;o tem que ser definida em rela&ccedil;&atilde;o
+      aos outros[...] As pessoas como eu querem[...] satisfazer plenamente o pr&oacute;prio
+      cora&ccedil;&atilde;o, e, ao fazer isso, tempos automaticamente o mais valioso
+      dos c&oacute;digos morais. Claro existem pessoas e objetos no mundo, mas ele
+      est&atilde;o todos l&aacute; somente para mim&quot;.</p><p style=\"\">&quot;Pessoas
+      como eu t&ecirc;m um dever somente para consigo mesmas; n&atilde;o temos dever
+      para com outras pessoas&quot;</p><p style=\"\">&quot;Tudo que est&aacute; fora
+      da sua natureza, tais como restri&ccedil;&otilde;es[c&oacute;digos morais, n&atilde;o
+      matar&aacute;s, etc...] e constrangimentos, deve ser varrido pela grande for&ccedil;a
+      da natureza deles[os grandes her&oacute;is, grupo no qual se inclu&iacute;a][...]
+      Quando d&atilde;o r&eacute;deas aos seus impulsos, os Grandes Her&oacute;is
+      s&atilde;o magnificamente poderosos, tempestuoso e invenc&iacute;veis. Seu poder
+      &eacute; como um furac&atilde;o levantando-se de uma garganta profunda, e como
+      um man&iacute;aco por sexo no cio e na ca&ccedil;a de uma amante[...] n&atilde;o
+      h&aacute; como det&ecirc;-los.&quot;</p><p style=\"\">&quot;[...] Pessoas como
+      eu anseiam por essa destrui&ccedil;&atilde;o, porque, quando o velho universo
+      for destru&iacute;do, um novo universo se formar&aacute;. N&atilde;o &eacute;
+      melhor assim?!&quot; [Mao ainda n&atilde;o era comunista]<br></p>'
+    :from_web: true
+  - :data: '2018-01-04T22:01:41-02:00'
+    :start_page: 38
+    :end_page: 54
+    :note: 
+    :from_web: true
+  - :data: '2018-01-05T15:51:27-02:00'
+    :start_page: 54
+    :end_page: 86
+    :note: 
+    :from_web: true
+  - :data: '2018-01-05T23:01:05-02:00'
+    :start_page: 86
+    :end_page: 144
+  - :data: '2018-01-06T16:47:23-02:00'
+    :start_page: 144
+    :end_page: 169
+    :note: 
+    :from_web: true
+  - :data: '2018-01-08T11:20:12-02:00'
+    :start_page: 169
+    :end_page: 201
+    :note: 
+    :from_web: true
+  - :data: '2018-01-08T14:18:47-02:00'
+    :start_page: 201
+    :end_page: 216
+  - :data: '2018-01-08T15:41:25-02:00'
+    :start_page: 216
+    :end_page: 240
+  - :data: '2018-01-08T17:22:54-02:00'
+    :start_page: 240
+    :end_page: 257
+    :note: 
+    :from_web: true
+  - :data: '2018-01-08T17:48:48-02:00'
+    :start_page: 257
+    :end_page: 265
+    :note: 
+    :from_web: true
+  - :data: '2018-01-08T21:56:12-02:00'
+    :start_page: 265
+    :end_page: 276
+    :note: 
+    :from_web: true
+  - :data: '2018-01-09T10:18:06-02:00'
+    :start_page: 276
+    :end_page: 297
+    :note: 
+    :from_web: true
+  - :data: '2018-01-09T22:59:40-02:00'
+    :start_page: 297
+    :end_page: 317
+  - :data: '2018-01-11T15:34:33-02:00'
+    :start_page: 317
+    :end_page: 339
+  - :data: '2018-01-11T22:20:18-02:00'
+    :start_page: 339
+    :end_page: 365
+  - :data: '2018-01-12T15:41:49-02:00'
+    :start_page: 365
+    :end_page: 389
+  - :data: '2018-01-12T18:18:42-02:00'
+    :start_page: 389
+    :end_page: 419
+  - :data: '2018-01-12T22:22:23-02:00'
+    :start_page: 419
+    :end_page: 443
+  - :data: '2018-01-13T22:11:06-02:00'
+    :start_page: 443
+    :end_page: 473
+  - :data: '2018-01-13T23:02:46-02:00'
+    :start_page: 473
+    :end_page: 487
+  - :data: '2018-01-14T09:43:12-02:00'
+    :start_page: 487
+    :end_page: 502
+    :note: 
+    :from_web: true
+  - :data: '2018-01-14T16:31:07-02:00'
+    :start_page: 502
+    :end_page: 518
+  - :data: '2018-01-14T22:33:34-02:00'
+    :start_page: 518
+    :end_page: 549
+  - :data: '2018-01-15T10:57:12-02:00'
+    :start_page: 549
+    :end_page: 566
+  - :data: '2018-01-15T16:37:53-02:00'
+    :start_page: 566
+    :end_page: 624
+  - :data: '2018-01-15T21:49:27-02:00'
+    :start_page: 624
+    :end_page: 638
+  - :data: '2018-01-16T14:27:49-02:00'
+    :start_page: 638
+    :end_page: 667
+  - :data: '2018-01-16T17:46:17-02:00'
+    :start_page: 667
+    :end_page: 701
+  - :data: '2018-01-16T22:42:24-02:00'
+    :start_page: 701
+    :end_page: 719
+  - :data: '2018-01-17T16:05:09-02:00'
+    :start_page: 719
+    :end_page: 744
+  - :data: '2018-01-17T21:53:29-02:00'
+    :start_page: 744
+    :end_page: 795
+- :nome: O que há de errado com o mundo
+  :total_page: 179
+  :inicio: '2018-01-23'
+  :page: 179
+  :logs:
+  - :data: '2018-01-23T18:31:58-02:00'
+    :start_page: 8
+    :end_page: 22
+    :note: '<p style=\"\">A tarefa dos idealistas modernos tornou-se-lhes muito mais
+      f&aacute;cil pelo fato de sempre lhres terem ensinado que, se algo foi derrotado,
+      foi refutado. Logicamente, o que se d&aacute; &eacute; sem d&uacute;vida o contr&aacute;rio:
+      as causas perdidas s&atilde;o exatamente aquelas que poderiam ter salvado o
+      mundo.<br></p>'
+    :from_web: true
+  - :data: '2018-01-23T22:54:32-02:00'
+    :start_page: 22
+    :end_page: 36
+  - :data: '2018-01-24T18:00:45-02:00'
+    :start_page: 36
+    :end_page: 46
+  - :data: '2018-01-25T15:49:37-02:00'
+    :start_page: 46
+    :end_page: 65
+  - :data: '2018-01-26T16:17:25-02:00'
+    :start_page: 65
+    :end_page: 82
+  - :data: '2018-01-26T19:11:39-02:00'
+    :start_page: 82
+    :end_page: 89
+  - :data: '2018-01-26T21:52:09-02:00'
+    :start_page: 89
+    :end_page: 98
+  - :data: '2018-01-27T13:55:43-02:00'
+    :start_page: 98
+    :end_page: 110
+  - :data: '2018-01-27T23:16:14-02:00'
+    :start_page: 110
+    :end_page: 163
+  - :data: '2018-01-28T10:05:49-02:00'
+    :start_page: 163
+    :end_page: 179
+- :nome: A lista de Schindler
+  :total_page: 194
+  :inicio: '2018-01-28'
+  :page: 194
+  :logs:
+  - :data: '2018-01-28T10:25:29-02:00'
+    :start_page: 9
+    :end_page: 13
+  - :data: '2018-01-28T14:54:11-02:00'
+    :start_page: 13
+    :end_page: 22
+    :note: <p style=\"\">&quot;Frusta vivit, qui nemini prodest - Vive em v&atilde;o
+      aquele que n&atilde;o ajuda ningu&eacute;m&quot;<br></p>
+    :from_web: true
+  - :data: '2018-01-28T21:48:28-02:00'
+    :start_page: 22
+    :end_page: 41
+    :note: 
+    :from_web: true
+  - :data: '2018-01-29T04:09:59-02:00'
+    :start_page: 41
+    :end_page: 74
+  - :data: '2018-01-29T07:35:55-02:00'
+    :start_page: 74
+    :end_page: 95
+  - :data: '2018-01-29T13:19:12-02:00'
+    :start_page: 95
+    :end_page: 123
+    :note: 
+    :from_web: true
+  - :data: '2018-01-30T03:45:47-02:00'
+    :start_page: 123
+    :end_page: 153
+  - :data: '2018-01-31T11:14:42-02:00'
+    :start_page: 153
+    :end_page: 181
+    :note: <p style=\"\">&quot;Seja o homem nobre</p><p style=\"\">Prestativo e bom!</p><p
+      style=\"\">Pois s&oacute; isso</p><p style=\"\">O diferencia</p><p style=\"\">De todos
+      os seres</p><p style=\"\">Que n&oacute;s conhecemos!&quot;</p><p style=\"\"><br></p><p
+      style=\"\">Goethe<br></p>
+    :from_web: true
+  - :data: '2018-01-31T14:50:18-02:00'
+    :start_page: 181
+    :end_page: 194
+- :nome: Robinson Crusoé
+  :total_page: 289
+  :inicio: '2018-01-31'
+  :page: 289
+  :logs:
+  - :data: '2018-01-31T16:12:19-02:00'
+    :start_page: 37
+    :end_page: 44
+  - :data: '2018-01-31T21:25:45-02:00'
+    :start_page: 44
+    :end_page: 58
+  - :data: '2018-02-01T08:00:50-02:00'
+    :start_page: 58
+    :end_page: 69
+  - :data: '2018-02-01T17:22:07-02:00'
+    :start_page: 69
+    :end_page: 92
+    :note: <p style=\"\">Como a raz&atilde;o &eacute; a subst&acirc;ncia original da
+      matem&aacute;tica, da mesma forma, aquilatando e esquadrinhando tudo com uso
+      da raz&atilde;o, e fazendo o ju&iacute;zo mais racional das coisas, qualeur
+      homem, com o tempo, ser&aacute; capaz de dominar todas as artes mec&acirc;nicas.<br></p>
+    :from_web: true
+  - :data: '2018-02-01T17:27:38-02:00'
+    :start_page: 92
+    :end_page: 96
+    :note: 
+    :from_web: true
+  - :data: '2018-02-01T22:34:08-02:00'
+    :start_page: 96
+    :end_page: 113
+  - :data: '2018-02-02T22:53:12-02:00'
+    :start_page: 113
+    :end_page: 164
+    :note: <p style=\"\">&quot;Numa palavra, a natureza e a experi&ecirc;ncia das coisas
+      me ditavam, depois de uma ponderada reflex&atilde;o, que todas as boas coisas
+      deste mundo s&oacute; s&atilde;o boas para n&oacute;s na medida em que nos t&ecirc;m
+      algum proveito, e que tudo que podemos juntar para dar a outros s&oacute; nos
+      vale alguma coisa na medida em que nos for &uacute;til, e n&atilde;o mais.&quot;</p><p
+      style=\"\">&quot;Toda a insatisfa&ccedil;&atilde;o que sentimos devido ao que
+      nos falta me parecia fruto da falta de gratid&atilde;o pelo que temos.&quot;<br></p>
+    :from_web: true
+  - :data: '2018-02-03T16:16:43-02:00'
+    :start_page: 164
+    :end_page: 176
+    :note: <p style=\"\">&quot;[...]e posso declarar, a partir da minha experi&ecirc;ncia,
+      que um estado de esp&iacute;rito de paz, gradid&atilde;o, amor e afeto &eacute;
+      muito mais adequado &agrave; prece que uma disposi&ccedil;&atilde;o aterrorizadora
+      e descomposta. E que diante do pavor de uma iminente nenhum homem se v&ecirc;
+      justamente preparado para o seu dever da prece di&aacute;ria a Deus, assim como
+      nenhum se v&ecirc; pronto ao arrependimento em seu leito de doente. Pois essas
+      perturba&ccedil;&otilde;es afetam a mente, como a mol&eacute;stia afeta o corpo;
+      e a perturba&ccedil;&atilde;o da mente constitui necessariamente um mal t&atilde;o
+      grande quanto alguma efermidade do corpo, e maior ainda, visto ser a prece a
+      Deus, na verdade, uma atividade da mente, e n&atilde;o do corpo.&quot;</p>
+    :from_web: true
+  - :data: '2018-02-03T22:03:36-02:00'
+    :start_page: 176
+    :end_page: 193
+  - :data: '2018-02-03T22:42:06-02:00'
+    :start_page: 193
+    :end_page: 198
+  - :data: '2018-02-04T16:07:14-02:00'
+    :start_page: 198
+    :end_page: 234
+  - :data: '2018-02-05T22:43:39-02:00'
+    :start_page: 234
+    :end_page: 271
+  - :data: '2018-02-06T18:13:29-02:00'
+    :start_page: 271
+    :end_page: 289
+- :nome: Fuga do campo 14
+  :total_page: 215
+  :inicio: '2018-02-08'
+  :page: 215
+  :logs:
+  - :data: '2018-02-08T17:21:59-02:00'
+    :start_page: 13
+    :end_page: 21
+    :note: 
+    :from_web: true
+  - :data: '2018-02-08T22:29:03-02:00'
+    :start_page: 21
+    :end_page: 28
+  - :data: '2018-02-09T10:59:28-02:00'
+    :start_page: 28
+    :end_page: 29
+    :note: 
+    :from_web: true
+  - :data: '2018-02-09T16:54:50-02:00'
+    :start_page: 29
+    :end_page: 89
+  - :data: '2018-02-09T21:43:25-02:00'
+    :start_page: 89
+    :end_page: 134
+    :note: 
+    :from_web: true
+  - :data: '2018-02-10T18:35:37-02:00'
+    :start_page: 134
+    :end_page: 215
+    :note: 
+    :from_web: true
+- :nome: Progresso na vida espiritual
+  :total_page: 444
+  :inicio: '2018-02-01'
+  :page: 32
+  :logs:
+  - :data: '2018-02-11T11:40:58-02:00'
+    :start_page: 9
+    :end_page: 20
+    :note: '<p align=\"justify\" lang=\"pt-PT\">Inicia com uma observa&ccedil;&atilde;o
+      bem peculiar: &ldquo;na espiritualidade &eacute; important&iacute;ssimo termos
+      um profundo conhecimento de n&oacute;s mesmos e, ao mesmo tempo, persarmos muito
+      pouco em nossa pessoa, o que n&atilde;o &eacute; muito f&aacute;cil de conciliar&rdquo;.
+      Como o conhecimento de n&oacute;s mesmos destroe a humildade, &ldquo;todo desejo
+      que n&atilde;o for rigorosamente disciplinado e firmemente subjugado, torna-se,
+      com o tempo, exagerado e desregrado e ent&atilde;o sabe encontrar, com ast&uacute;cia
+      fatal, os meios mais funestos de satisfazer-se a si pr&oacute;prio&rdquo;. Uma
+      humildade madura &ldquo;&eacute; um perp&eacute;tuo est&iacute;mulo de maior
+      generosidade para com Deus&rdquo;.</p><p align=\"justify\" lang=\"pt-PT\"><br></p><p
+      align=\"justify\" lang=\"pt-PT\">Ap&oacute;s o primeiro momento de convers&atilde;o
+      &ldquo;as ora&ccedil;&otilde;es tornam-se &aacute;ridas. O terreno que cavamos
+      &eacute; mais duro e pedregoso. O trabalho perde o encanto &agrave; medida que
+      se torna mais penoso. O trabalho perde o encanto &agrave; medida que se torna
+      mais penoso. A perfei&ccedil;&atilde;o parece-nos menos f&aacute;cil, e a penit&ecirc;ncia,
+      insuport&aacute;vel. &Eacute; chegado, ent&atilde;o, o momento da coragem e
+      da prova do nosso valor real. Come&ccedil;amos a viajar nas regi&otilde;es centrais
+      da vida espiritual, que s&atilde;o, na maior parte, regi&otilde;es de deserto.
+      &Eacute; aqui que tantos voltam atr&aacute;s, sendo rejeitados por Deus como
+      santos malogrados e voca&ccedil;&otilde;es inutilizadas. A alma a quem se dirige
+      este livro j&aacute; chegou a tal ponto, e caminha a custo, queimada pelo sol
+      e vento, com areia at&eacute; aos tornozelos, desesperada pela escassez das
+      nascentes d&#39;&aacute;gua, queixosa por falta de uma sombra quieta e fresca,
+      e inclinada a parar e desistir da obra por julg&aacute;-la imposs&iacute;vel&rdquo;.&nbsp;</p><p
+      align=\"justify\" lang=\"pt-PT\"><br></p><p align=\"justify\" lang=\"pt-PT\">Ent&atilde;o
+      temos os cinco sinais de progresso:</p><p align=\"justify\" lang=\"pt-PT\">1) &ldquo;desejo
+      acompanhado de profunda gratid&atilde;o pelas gra&ccedil;as passadas e grande
+      confian&ccedil;a nas futuras, e de um sentimento de viva indigna&ccedil;&atilde;o
+      pelo n&uacute;mero muito maior de gra&ccedil;as recebidas do que correspondidas.</p><p
+      align=\"justify\" lang=\"pt-PT\">2) busca de novas formas de adora&ccedil;&atilde;o:
+      &ldquo;Consistem pricipalmente em duas coisas: primerio, em renovar a inten&ccedil;&atilde;o
+      de querer a maior gl&oacute;ria de Deus; e, em segundo, em reanimar o fervor&rdquo;.</p><p
+      align=\"justify\" lang=\"pt-PT\">3) ter um ponto de atra&ccedil;&atilde;o, a busca
+      de um virtude ou a destrui&ccedil;&atilde;o de um v&iacute;cio: &ldquo;n&atilde;o
+      &eacute; prov&aacute;vel que progrediremos, se caminharmos a esmo, sem ter um
+      claramente escolhido e sem empregar os devidos esfor&ccedil;os e atividade para
+      alcan&ccedil;&aacute;-lo, depois de o ter conscienciosamente escolhido&rdquo;.</p><p
+      align=\"justify\" lang=\"pt-PT\">4) ponto de atra&ccedil;&atilde;o algo que Deus
+      quer de n&oacute;s: &ldquo;Quando essa atra&ccedil;&atilde;o se associa a um
+      ativo conhecimento pr&oacute;prio e a uma constante vigil&acirc;ncia na ora&ccedil;&atilde;o
+      interior, &eacute; um grande dom de Deus pelas imensas facilidades que proprociona
+      para levar a alma &agrave; perfei&ccedil;&atilde;o; assemelha-se quase a uma
+      revela&ccedil;&atilde;o especial. Sentir, pois, com s&oacute;bria rever&ecirc;ncia,
+      essa atra&ccedil;&atilde;o do Esp&iacute;rito Santo &eacute; sinal de progresso&rdquo;.</p><p
+      align=\"justify\" lang=\"pt-PT\">5) desejo de santidade: &ldquo;Acho que n&atilde;o
+      estimamos bastante esse desejo geral da perfei&ccedil;&atilde;o. Naturalmente
+      n&atilde;o nos devemos deter nele, nem nos contentar unicamente com ele. S&oacute;
+      nos &eacute; dado para prosseguirmos&rdquo;.</p>'
+    :from_web: true
+  - :data: '2018-02-12T19:22:35-02:00'
+    :start_page: 20
+    :end_page: 32
+    :note: '<p align=\"justify\" lang=\"pt-PT\">O caminho intermedi&aacute;rio entre o
+      principiante e o avan&ccedil;ado &eacute; o deserto. &ldquo;O deserto da paci&ecirc;ncia
+      longa e perseverante nas pr&aacute;ticas humilhantes da s&oacute;lida virtude&rdquo;.
+      No in&iacute;cio deste deserto encontramos dois inimigos principais o des&acirc;nimo
+      e a presun&ccedil;&atilde;o. Devemos caminhar calmos, pacientes e tranq&uuml;ilos,
+      &ldquo;um desses erros &eacute; exagerar as pr&oacute;prias faltas; e isso leva-nos
+      logo ao des&acirc;nimo&rdquo;. &ldquo;A experi&ecirc;ncia ainda n&atilde;o nos
+      mostrou que cada vit&oacute;ria na vida espiritual &eacute; ganha a custo de
+      muitas derrotas. Mas tarde descobriremos que isso constitui grande fonte de
+      humildade&rdquo;.</p><p align=\"justify\" lang=\"pt-PT\"><br></p><p align=\"justify\"
+      lang=\"pt-PT\">&ldquo;A perseveran&ccedil;a &eacute; a maior das provas, a mais
+      pesada das cargas, a mais esmagadora das cruzes&rdquo;.</p><p align=\"justify\"
+      lang=\"pt-PT\"><br></p><p align=\"justify\" lang=\"pt-PT\">Cinco sinais que podem
+      gerar a presun&ccedil;&atilde;o e/ou des&acirc;nimo:</p><p align=\"justify\" lang=\"pt-PT\">a)
+      aumento ou diminui&ccedil;&atilde;o de reincid&ecirc;ncia no pecado dominante</p><p
+      align=\"justify\" lang=\"pt-PT\">b) priva&ccedil;&atilde;o da devo&ccedil;&atilde;o
+      sens&iacute;vel, &ldquo;a pr&oacute;pria priva&ccedil;&atilde;o &eacute; &agrave;s
+      vezes um favor, e tem por fim elevar a alma a um estado mais alto e aumentar-lhe
+      o amor e os m&eacute;ritos&rdquo;.</p><p align=\"justify\" lang=\"pt-PT\">c) uma
+      dificuldade ferrea na ora&ccedil;&atilde;o meditativa, ou engano do recebimento
+      de um dom de ora&ccedil;&atilde;o: &ldquo;Devemos, por&eacute;m, lembrar-nos
+      que o h&aacute;bito da ora&ccedil;&atilde;o n&atilde;o &eacute; a mesma coisa
+      que a gra&ccedil;a da ora&ccedil;&atilde;o.&rdquo;</p><p align=\"justify\" lang=\"pt-PT\">d)
+      uma &ldquo;tempestade de tenta&ccedil;&otilde;es em torno de n&oacute;s&rdquo;:
+      &ldquo;o continuar da tenta&ccedil;&atilde;o &eacute; prova de que, pelo menos
+      at&eacute; agora, n&atilde;o consentimos nela&rdquo;.</p><p align=\"justify\"
+      lang=\"pt-PT\">e) os sacramentos principalmente e comunh&atilde;o e &agrave; confiss&atilde;o
+      j&aacute; n&atilde;o s&atilde;o &ldquo;divinos&rdquo;: &ldquo;A gra&ccedil;a
+      dos sacramentos n&atilde;o depende do nosso m&eacute;rito&rdquo;.</p><p align=\"justify\"
+      lang=\"pt-PT\"><br></p><p align=\"justify\" lang=\"pt-PT\">A paz no caminho &eacute;
+      obtido num s&aacute;bio manejo eficaz dessas duas tenta&ccedil;&otilde;es: a
+      presun&ccedil;&atilde;o e o des&acirc;nimo.</p>'
+    :from_web: true
+- :nome: O jogo das contas de vidro
+  :total_page: 482
+  :inicio: '2018-02-15'
+  :page: 22
+  :logs:
+  - :data: '2018-02-15T20:54:51-02:00'
+    :start_page: 8
+    :end_page: 22
 ")
 
 db.each do |item|

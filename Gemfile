@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+ruby '2.1.5'
+gem 'rails', '4.2.4'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -20,12 +21,9 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
+  gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg'
-end
-
-group :development, :test do
-  gem 'sqlite3'
+  gem 'pg', '~> 1.0'
 end

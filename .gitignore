@@ -19,4 +19,6 @@ config/initializers/secret_token.rb
 *.bowerrc
 bower.json
 
+/public/assets/
+
 # /vendor/cache/*

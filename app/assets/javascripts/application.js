@@ -1,15 +1,20 @@
-//= require jquery
-//= require jquery_ujs
-//= require angular
-//= require angular-route
-//= require angular-resource
+//= require jquery/dist/jquery.min.js
+//= require jquery-ui/jquery-ui.min.js
+//= require angular/angular.min.js
+//= require angular-route/angular-route.min.js
+//= require angular-resource/angular-resource.min.js
 //= require angular-local-storage
 //= require angular-rails-templates
 //= require angular-rails-example
-//= require angular-froala
-//= require froala-wysiwyg-editor
 //= require_tree ./controllers
 //= require_tree ./services
+
+//= require froala-wysiwyg-editor/js/froala_editor.min.js
+//= require froala-wysiwyg-editor/js/froala_editor.pkgd.min.js
+
+//= require angular-froala/src/angular-froala.js
+
+
 
 //= require froala-wysiwyg-editor/js/plugins/align.min.js
 //= require froala-wysiwyg-editor/js/plugins/char_counter.min.js
@@ -57,5 +62,5 @@
 
 //= require bootstrap-tooltip.js
 //= require gentelella.js
-//= require angular-animate
-//= require angular-loading-bar
+//= require angular-animate/angular-animate.min.js
+//= require angular-loading-bar.js

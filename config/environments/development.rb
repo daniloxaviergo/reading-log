@@ -36,6 +36,8 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.assets.append_path 'vendor/assets/bower_components'
+
   # config.assets.js_compressor = :uglifier
   # config.cache_classes = true
   # config.eager_load = true

@@ -1,5 +1,5 @@
 <!-- page content -->
-<div ng-controller="Dashboard::IndexController" ng-init="init()" class="right_col" role="main">
+<div ng-controller="Dashboard::IndexController" ng-init="init()" class="right_col principal" role="main">
 
   <h1>Dashboard</h1>
   <div class="nga-fast nga-fade row tile_count" ng-show="loaded" style="margin:0; margin-top: 15px">
@@ -181,7 +181,7 @@
 
                 <td class="hidden-xs pull-right">
                   <button ng-click="showMenu = !showMenu" type="button" class="btn btn-round btn-default dropdown-toggle">
-                    <i class="fa fa-navicon"></i>
+                    <i class="fa fa-bars"></i>
                   </button>
                   <div style="position: absolute; float: right; right: 10px;" ng-class="{'open': showMenu, '': !showMenu}">
                     <ul class="dropdown-menu" style="position: relative; font-size: 14px">

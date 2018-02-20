@@ -142,7 +142,7 @@
             </thead>
             <tbody>
               <!-- <tr ng-repeat="item in dados.geral_reads" ng-init="logs.form.open(item, true)"> -->
-              <tr ng-repeat="item in dados.geral_reads" ng-init="project = item; project.isModal = true">
+              <tr ng-repeat="item in dados.geral_reads" ng-init="init(item)" ng-controller="Dashboard::ItemController">
                 <th scope="row" class="hidden-xs"><a href="/projects/{{item.id}}">#{{item.id}}</a></th>
                 <td>{{item.nome}}</td>
                 <td>
@@ -180,7 +180,7 @@
                 </td>
 
                 <td class="hidden-xs pull-right">
-                  <button ng-click="showMenu = !showMenu" type="button" class="btn btn-round btn-default dropdown-toggle">
+                  <button ng-click="itemToggleMenu($event)" type="button" class="btn btn-round btn-default dropdown-toggle">
                     <i class="fa fa-bars"></i>
                   </button>
                   <div style="position: absolute; float: right; right: 10px;" ng-class="{'open': showMenu, '': !showMenu}">
@@ -203,13 +203,13 @@
                         </div>
 
                         <a data-toggle="modal" data-target=".modal-nova-leitura{{$index}}" style="padding: 10px">
-                          <i class="fa fa-file-text-o"></i>
+                          <i class="fa fa-book"></i>
                           Nova leitura
                         </a>
                       </li>
                       <li>
                         <a href="/projects/{{item.id}}" style="padding: 10px">
-                          <i class="fa fa-line-chart"></i>
+                          <i class="fa fa-signal"></i>
                           Visão Geral
                         </a>
                       </li>

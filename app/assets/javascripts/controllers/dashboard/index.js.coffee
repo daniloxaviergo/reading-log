@@ -178,11 +178,20 @@ echartBar = {} #echarts.init(document.getElementById('mainb'), theme);
 progresso_mediana = {} #echarts.init(document.getElementById('progresso_mediana'), theme);
 semanal_graph = {}
 
-angular.module('angular-rails-example').controller 'Dashboard::IndexController', ['$scope', 'Dashboard', '$timeout'
-  ($s, Dashboard, $timeout) ->
+angular.module('angular-rails-example')
+.controller 'Dashboard::IndexController', ['$scope', 'Dashboard', '$timeout', '$window'
+  ($s, Dashboard, $timeout, $window) ->
     $s.dados = {}
     $s.loaded = false
     $s.isMobile = false
+
+    $s.echartBar = {} #echarts.init(document.getElementById('mainb'), theme);
+    $s.progresso_mediana = {} #echarts.init(document.getElementById('progresso_mediana'), theme);
+    $s.semanal_graph = {}
+
+    $s.resizeGraphs = ->
+      console.log 'oyyylk'
+
     $s.init = ->
       $s.isMobile = window.innerWidth <= 425
       Dashboard.index {isMobile: $s.isMobile},
@@ -191,30 +200,30 @@ angular.module('angular-rails-example').controller 'Dashboard::IndexController',
 
           if $s.isMobile
             # graficos para mobile
-            paginas_lidas_graph = echarts.init(document.getElementById('paginas_lidas_graph'), theme);
-            semanal_graph_mobile = echarts.init(document.getElementById('semanal_graph_mobile'), theme);
+            $s.paginas_lidas_graph = echarts.init(document.getElementById('paginas_lidas_graph'), theme);
+            $s.semanal_graph_mobile = echarts.init(document.getElementById('semanal_graph_mobile'), theme);
           else
             # gráficos para desktop
-            echartBar = echarts.init(document.getElementById('mainb'), theme);
-            progresso_mediana = echarts.init(document.getElementById('progresso_mediana'), theme);
-            semanal_graph = echarts.init(document.getElementById('semanal_graph'), theme);
+            $s.echartBar = echarts.init(document.getElementById('mainb'), theme);
+            $s.progresso_mediana = echarts.init(document.getElementById('progresso_mediana'), theme);
+            $s.semanal_graph = echarts.init(document.getElementById('semanal_graph'), theme);
 
           $s.loaded = true
 
           $timeout ->
             if $s.isMobile
-              paginas_lidas_graph.setOption($s.dados.paginas_lidas_graph)
-              paginas_lidas_graph.resize()
+              $s.paginas_lidas_graph.setOption($s.dados.paginas_lidas_graph)
+              $s.semanal_graph_mobile.resize()
 
-              semanal_graph_mobile.setOption($s.dados.semanal_graph_mobile)
-              semanal_graph_mobile.resize()
+              $s.semanal_graph_mobile.setOption($s.dados.semanal_graph_mobile)
+              $s.semanal_graph_mobile.resize()
 
             else
-              echartBar.setOption($s.dados.main_graph)
-              echartBar.resize()
+              $s.echartBar.setOption($s.dados.main_graph)
+              $s.echartBar.resize()
 
-              semanal_graph.setOption($s.dados.semanal_graph)
-              semanal_graph.resize()
+              $s.semanal_graph.setOption($s.dados.semanal_graph)
+              $s.semanal_graph.resize()
 
               # progresso_mediana.setOption($s.dados.progresso_mediana)
               # progresso_mediana.resize()
@@ -226,6 +235,26 @@ angular.module('angular-rails-example').controller 'Dashboard::IndexController',
         (response)->
           $s.loaded = true
           console.log('error')
+
+
+      angular.element($window).bind 'resize', ->
+        console.log 'ok'
+        $timeout ->
+          if $s.isMobile
+            $s.paginas_lidas_graph.setOption($s.dados.paginas_lidas_graph)
+            $s.semanal_graph_mobile.resize()
+
+            $s.semanal_graph_mobile.setOption($s.dados.semanal_graph_mobile)
+            $s.semanal_graph_mobile.resize()
+
+          else
+            $s.echartBar.setOption($s.dados.main_graph)
+            $s.echartBar.resize()
+
+            $s.semanal_graph.setOption($s.dados.semanal_graph)
+            $s.semanal_graph.resize()
+            $s.progresso_mediana.resize()
+        , 500
 
     $s.set_graph_week = (week) ->
       $s.g_dom = false
@@ -244,8 +273,8 @@ angular.module('angular-rails-example').controller 'Dashboard::IndexController',
       $s.g_sex = true if week == 5
       $s.g_sab = true if week == 6
 
-      progresso_mediana.setOption($s.dados.progresso_mediana[week])
-      progresso_mediana.resize()
+      $s.progresso_mediana.setOption($s.dados.progresso_mediana[week])
+      $s.progresso_mediana.resize()
 
     $s.set_days = (tipo) ->
       $s.days_7  = false

@@ -1,5 +1,5 @@
 <!-- top navigation -->
-<div class="top_nav navbar-static-top" ng-controller="NavBarController">
+<div class="top_nav navbar-static-top" ng-controller="NavBarController" ng-init="init()">
 
 
   <div class="modal fade bs-example-modal-lg in" tabindex="-1" role="dialog" aria-hidden="true">
@@ -33,8 +33,8 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <li ng-class="{'open': $scope.showMenu, '': !$scope.showMenu}">
-          <a ng-click="$scope.showMenu = !$scope.showMenu" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+        <li ng-class="{'open': showMenu, '': !showMenu}">
+          <a ng-click="toggleMenu($event)" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
             <%= image_tag "user.png" %> Danilo Xavier
             <span class="fa fa-angle-down" style="display: inline !important;"></span>
           </a>

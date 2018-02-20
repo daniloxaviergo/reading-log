@@ -26,9 +26,17 @@ angular.module('angular-rails-example').controller 'BookController', ['$scope', 
         Book.create $scope.book, callback
 ]
 
-angular.module('angular-rails-example').controller 'NavBarController', ['$scope', '$routeParams', '$location',
-  ($scope, $routeParams, $location) ->
-    console.log 'Teste navBarController'
-
-    $scope.showMenu = false    
+angular.module('angular-rails-example').controller 'NavBarController', ['$scope', '$routeParams', '$location', '$window',
+  ($scope, $routeParams, $location, $window) ->
+    $scope.init = ()->
+      $scope.showMenu = false
+      angular.element($window).on 'click', (event, dont_apply)=>
+        $scope.showMenu = false
+        $scope.$apply() unless dont_apply
+    
+    $scope.toggleMenu = (event)->
+      dont_apply = true
+      angular.element($window).triggerHandler('click', dont_apply)
+      $scope.showMenu = !($scope.showMenu)
+      event.stopPropagation()
 ]

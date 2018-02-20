@@ -1,6 +1,7 @@
 //= require jquery/dist/jquery.min.js
 //= require jquery-ui/jquery-ui.min.js
 //= require angular/angular.min.js
+//= require angular-sanitize/angular-sanitize.min.js
 //= require angular-route/angular-route.min.js
 //= require angular-resource/angular-resource.min.js
 //= require angular-local-storage
@@ -56,7 +57,7 @@
 //= require moment/min/moment.min.js
 //= require angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar.js
 //= require angular-ui-bootstrap/dist/ui-bootstrap-tpls.js
-
+//= require angular-ui-bootstrap/dist/ui-bootstrap-tpls.js
 
 
 

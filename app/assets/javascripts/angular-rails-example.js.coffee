@@ -1,7 +1,7 @@
 # app = angular.module 'angular-rails-example', ['ngRoute', 'templates', 'froala', 'app1', 'app2', 'app3', 'booksController', 'Project', 'Log', 'Dashboard']
 # app = angular.module 'angular-rails-example', ['ngRoute', 'templates', 'froala', 'booksController']
 
-app = angular.module('angular-rails-example', ['ngRoute', 'templates', 'froala', 'ngResource', 'LocalStorageModule', 'angular-loading-bar', 'ngAnimate', 'mwl.calendar', 'ui.bootstrap']).value('froalaConfig', { toolbarInline: false, placeholderText: 'Edit Your Content Here!' })
+app = angular.module('angular-rails-example', ['ngRoute', 'templates', 'froala', 'ngResource', 'LocalStorageModule', 'angular-loading-bar', 'ngAnimate', 'mwl.calendar', 'ui.bootstrap', 'ngSanitize']).value('froalaConfig', { toolbarInline: false, placeholderText: 'Edit Your Content Here!' })
 
 app.config ['$routeProvider', '$locationProvider', '$httpProvider', 'calendarConfig'
   ($routeProvider, $locationProvider, $httpProvider, calendarConfig) ->

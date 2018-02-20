@@ -21,6 +21,7 @@
     "froala-wysiwyg-editor": "latest",
     "echarts": "latest",
     "jquery": "latest",
-    "jquery-ui": "latest"
+    "jquery-ui": "latest",
+    "angular-sanitize": "latest"
   }
 }

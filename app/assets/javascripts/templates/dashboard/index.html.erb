@@ -5,7 +5,7 @@
   <div class="nga-fast nga-fade row tile_count" ng-show="loaded" style="margin:0; margin-top: 15px">
     <div class="row title_count" style="margin-bottom: 10px">
       <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 tile_stats_count">
-        <div class="count_top"><i class="fa fa-user"></i> Total Pages Week</div>
+        <div class="count_top"><i class="fa fa-home"></i> Total Pages Week</div>
         <span class="count">
           {{dados.total_pages || 0}}
         </span>
@@ -13,32 +13,32 @@
         <span style="font-size: 25px"> / {{dados.last_week_pages || 0}}</span>
         <div class="count_bottom">
           <i ng-class="{'green':dados.total_last_per > 1, 'red': dados.total_last_per < 1}">
-            <i class="fa" ng-class="{'fa-sort-asc': dados.total_last_per > 1, 'fa-sort-desc': dados.total_last_per < 1}"></i>
+            <i class="fa" ng-class="{'fa-thumbs-up': dados.total_last_per > 1, 'fa-thumbs-down': dados.total_last_per < 1}"></i>
             {{((dados.total_last_per-1)*100).toFixed(3) || 0}}%
           </i> From last Week
         </div>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 hidden-xs tile_stats_count">
-        <span class="count_top"><i class="fa fa-clock-o"></i> Média do dia</span>
+        <span class="count_top"><i class="fa fa-adjust"></i> Média do dia</span>
         <div class="count">{{dados.media_periodo}}</div>
         <span class="count_bottom">
           <i ng-class="{'green':dados.media_periodo_last_per > 1, 'red': dados.media_periodo_last_per < 1}">
-            <i class="fa" ng-class="{'fa-sort-asc': dados.media_periodo_last_per > 1, 'fa-sort-desc': dados.media_periodo_last_per < 1}"></i>
+            <i class="fa" ng-class="{'fa-thumbs-up': dados.media_periodo_last_per > 1, 'fa-thumbs-down': dados.media_periodo_last_per < 1}"></i>
             {{((dados.media_periodo_last_per-1)*100).toFixed(5)}}%
           </i> From all Week
         </span>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 tile_stats_count">
-        <span class="count_top"><i class="fa fa-user"></i> Média do dia estimada</span>
+        <span class="count_top"><i class="fa fa-calculator"></i> Média do dia estimada</span>
         <div class="count">{{dados.media_dia_estimulada || 0}}</div>
         <div class="count_bottom" style="margin-top: 19px"></div>
       </div>
       <div class="col-md-2 col-sm-4 col-xs-12 hidden-sm hidden-xs tile_stats_count">
-        <span class="count_top"><i class="fa fa-user"></i> Média de pages geral</span>
+        <span class="count_top"><i class="fa fa-flag"></i> Média de pages geral</span>
         <div class="count">{{dados.media_geral || 0}}</div>
       </div>
       <div class="col-md-2 col-sm-4 col-xs-12 hidden-md hidden-sm hidden-xs tile_stats_count">
-        <span class="count_top"><i class="fa fa-user"></i> Máximo do dia</span>
+        <span class="count_top"><i class="fa fa-fire"></i> Máximo do dia</span>
         <div class="count">{{dados.maximo_dia || 0}}</div>
       </div>
     </div>

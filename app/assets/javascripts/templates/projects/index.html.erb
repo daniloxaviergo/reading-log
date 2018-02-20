@@ -222,6 +222,7 @@
     </div>
   </div>
 
-  <div class="nga-fast nga-fade" ng-show="logs.form.opened" ng-if="logs.form.opened" ng-include src="'/assets/templates/projects/logs/form.html'"></div>
+  <div ng-if="logs.form.opened" ng-include src="'/assets/templates/projects/logs/form.html'"></div>
+  <div ng-if="form.opened" ng-include src="'/assets/templates/projects/form.html'"></div>
 </div>
 <!-- /page content -->

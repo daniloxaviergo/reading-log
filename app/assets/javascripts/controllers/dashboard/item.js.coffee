@@ -11,6 +11,11 @@ angular.module('angular-rails-example')
         $s.$apply() unless dont_apply
     
     $s.itemToggleMenu = (event)->
+      if $s.showMenu
+        $s.showMenu = !($s.showMenu)
+        event.stopPropagation()
+        return
+
       dont_apply = true
       angular.element($window).triggerHandler('click', dont_apply)
       $s.showMenu = !($s.showMenu)

@@ -149,10 +149,6 @@ theme =
     detail: textStyle: color: 'auto'
   textStyle: fontFamily: 'Arial, Verdana, sans-serif'
 
-echartBarShow   = {} #echarts.init(document.getElementById('mainb'), theme);
-echartGuageShow = {}
-# progresso_mediana = {} #echarts.init(document.getElementById('progresso_mediana'), theme);
-
 
 monthShortNames = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -160,26 +156,29 @@ monthShortNames = [
 
 angular.module('angular-rails-example').controller 'Project::ShowController', ['$scope', 'Project', '$routeParams', '$timeout', '$rootScope'
   ($s, Project, $routeParams, $timeout, $rootScope) ->
+    $s.echartBarShow   = {}
+    $s.echartGuageShow = {}
+
     $s.init = ->
       $s.project = {}
       console.log 'showController'
 
       $rootScope.$watch window.innerWidth, (val)->
         console.log 'watch ok!'
-        echartBarShow.resize?()
-        echartGuageShow.resize?()
+        $s.echartBarShow.resize?()
+        $s.echartGuageShow.resize?()
 
       Project.get id: $routeParams.id, (data)->
         $s.project = data
 
         $timeout ->
-          echartBarShow = echarts.init(document.getElementById('mainb'), theme);
-          echartBarShow.setOption($s.project.project_graph)
-          echartBarShow.resize()
+          $s.echartBarShow = echarts.init(document.getElementById('mainb'), theme);
+          $s.echartBarShow.setOption($s.project.project_graph) if $s.project.project_graph
+          $s.echartBarShow.resize()
 
-          echartGuageShow = echarts.init(document.getElementById('echart_guage'), theme);
-          echartGuageShow.setOption($s.project.guage_graph)
-          echartGuageShow.resize()
+          $s.echartGuageShow = echarts.init(document.getElementById('echart_guage'), theme);
+          $s.echartGuageShow.setOption($s.project.guage_graph) if $s.project.guage_graph
+          $s.echartGuageShow.resize()
         , 500
 
     $s.getDia = (data)->

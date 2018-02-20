@@ -1,6 +1,6 @@
 <!-- page content -->
 <div ng-controller="Project::Logs::FormController" ng-init="init()">
-  <div class="page-title">    
+  <div ng-hide="project.isModal" class="page-title">    
     <div class="title">
       <a ng-hide="project.isModal" ng-click="logs.form.close()" class="btn btn-default" style="float: left;margin-right: 12px;padding-top: 2px;padding-bottom: 2px;">
         <i class="fa fa-reply"></i>
@@ -29,7 +29,7 @@
                 Page
               </label>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" ng-keyup="save_storage()" ng-model="project.log.end_page" required="required" class="form-control col-md-7 col-xs-12">
+                <input type="number" required="" ng-keyup="save_storage()" ng-model="project.log.end_page" required="required" class="form-control col-md-7 col-xs-12">
               </div>
             </div>
 

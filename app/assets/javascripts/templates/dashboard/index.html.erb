@@ -180,29 +180,29 @@
                 </td>
 
                 <td class="hidden-xs pull-right">
+                  <div class="modal modal-nova-leitura{{item.id}}">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel">{{item.nome}} - {{item.total_page}}pgs</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div ng-include src="'/assets/templates/projects/logs/form.html'"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <button ng-click="itemToggleMenu($event)" type="button" class="btn btn-round btn-default dropdown-toggle">
                     <i class="fa fa-bars"></i>
                   </button>
                   <div style="position: absolute; float: right; right: 10px;" ng-class="{'open': showMenu, '': !showMenu}">
                     <ul class="dropdown-menu" style="position: relative; font-size: 14px">
                       <li>
-                        <div class="modal modal-nova-leitura{{$index}}">
-                          <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                                </button>
-                                <h4 class="modal-title" id="myModalLabel">{{item.nome}}</h4>
-                              </div>
-                              <div class="modal-body">
-                                <div ng-include src="'/assets/templates/projects/logs/form.html'"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <a data-toggle="modal" data-target=".modal-nova-leitura{{$index}}" style="padding: 10px">
+                        <a data-toggle="modal" data-target=".modal-nova-leitura{{item.id}}" style="padding: 10px">
                           <i class="fa fa-book"></i>
                           Nova leitura
                         </a>

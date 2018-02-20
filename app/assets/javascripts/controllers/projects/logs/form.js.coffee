@@ -41,8 +41,8 @@ class Toggle
   toggle: -> if @closed then @open(arguments...) else @close(arguments...)
 
 
-angular.module('angular-rails-example').controller 'Project::Logs::FormController', ['$scope', '$timeout', 'Log', 'localStorageService'
-  ($s, $timeout, Log, localstorage) ->
+angular.module('angular-rails-example').controller 'Project::Logs::FormController', ['$scope', '$timeout', 'Log', 'localStorageService', '$window'
+  ($s, $timeout, Log, localstorage, $window) ->
     cookie   = localstorage.cookie
     key_form = ""
 
@@ -51,19 +51,10 @@ angular.module('angular-rails-example').controller 'Project::Logs::FormControlle
       height: 300
       events:
         'froalaEditor.keyup': ()-> $s.save_storage()
-        'froalaEditor.commands.after': (e, editor, cmd)->
-          console.log "froalaEditor.commands.after", cmd
 
     $s.init = ->
-      # console.log 'init formController'
-      # $s.projects = Project.index {}
-
-      # console.log $s.project
-
       key_form = "Project::Logs::Form::#{$s.project.id}::#{$s.project.log.start_page}"
       tmp_form = cookie.get(key_form)
-
-      # console.log key_form
 
       cookie.set(key_form, {}) unless tmp_form?
 
@@ -71,7 +62,6 @@ angular.module('angular-rails-example').controller 'Project::Logs::FormControlle
       $s.project.log.note     = tmp_form.note if tmp_form?.note?
 
     $s.save_storage = ->
-
       $timeout.cancel($s.promisse)
       $s.promisse = $timeout =>
         console.log 'save_storage'
@@ -94,8 +84,11 @@ angular.module('angular-rails-example').controller 'Project::Logs::FormControlle
       Log.create params,
         (data)->
           $s.loading = false
-          $s.logs.form.close()
-          remove(key)
+          if $s.project.isModal
+            $(".modal-nova-leitura#{$s.project.id}").modal('hide')
+            $window.location.reload()
+          else
+            $s.logs.form.close()
         (response)->
           $s.loading = false
           console.log(response)

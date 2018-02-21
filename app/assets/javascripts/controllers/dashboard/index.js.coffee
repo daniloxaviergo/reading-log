@@ -193,7 +193,7 @@ angular.module('angular-rails-example')
       console.log 'oyyylk'
 
     $s.init = ->
-      $s.isMobile = window.innerWidth <= 425
+      $s.isMobile = window.innerWidth <= 768
       Dashboard.index {isMobile: $s.isMobile},
         (data)->
           $s.dados = data
@@ -213,7 +213,7 @@ angular.module('angular-rails-example')
           $timeout ->
             if $s.isMobile
               $s.paginas_lidas_graph.setOption($s.dados.paginas_lidas_graph)
-              $s.semanal_graph_mobile.resize()
+              $s.paginas_lidas_graph.resize()
 
               $s.semanal_graph_mobile.setOption($s.dados.semanal_graph_mobile)
               $s.semanal_graph_mobile.resize()
@@ -242,7 +242,7 @@ angular.module('angular-rails-example')
         $timeout ->
           if $s.isMobile
             $s.paginas_lidas_graph.setOption($s.dados.paginas_lidas_graph)
-            $s.semanal_graph_mobile.resize()
+            $s.paginas_lidas_graph.resize()
 
             $s.semanal_graph_mobile.setOption($s.dados.semanal_graph_mobile)
             $s.semanal_graph_mobile.resize()

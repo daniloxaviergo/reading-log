@@ -193,7 +193,7 @@ angular.module('angular-rails-example')
       console.log 'oyyylk'
 
     $s.init = ->
-      $s.isMobile = window.innerWidth <= 768
+      $s.isMobile = window.innerWidth < 768
       Dashboard.index {isMobile: $s.isMobile},
         (data)->
           $s.dados = data

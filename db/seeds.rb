@@ -1754,7 +1754,7 @@ db = YAML.load("
 - :nome: Intimidade Divina
   :total_page: 774
   :inicio: '2017-10-29'
-  :page: 385
+  :page: 392
   :logs:
   - :data: '2017-12-03T14:15:22-02:00'
     :start_page: 20
@@ -1928,6 +1928,9 @@ db = YAML.load("
   - :data: '2018-02-18T13:24:16-03:00'
     :start_page: 373
     :end_page: 385
+  - :data: '2018-02-20T18:17:01-03:00'
+    :start_page: 385
+    :end_page: 392
 - :nome: A nova ciência da política
   :total_page: 135
   :inicio: '2017-11-04'
@@ -3219,7 +3222,7 @@ db = YAML.load("
 - :nome: O jogo das contas de vidro
   :total_page: 482
   :inicio: '2018-02-15'
-  :page: 87
+  :page: 96
   :logs:
   - :data: '2018-02-15T20:54:51-02:00'
     :start_page: 8
@@ -3244,6 +3247,9 @@ db = YAML.load("
   - :data: '2018-02-19T21:21:49-03:00'
     :start_page: 75
     :end_page: 87
+  - :data: '2018-02-20T17:49:30-03:00'
+    :start_page: 87
+    :end_page: 96
 - :nome: A história das origens do governo representativo
   :total_page: 802
   :inicio: '2018-02-11'
@@ -3276,6 +3282,9 @@ db = YAML.load("
   - :data: '2018-02-19T22:28:57-03:00'
     :start_page: 206
     :end_page: 217
+  - :data: '2018-02-20T22:30:27-03:00'
+    :start_page: 217
+    :end_page: 239
 
 ")
 

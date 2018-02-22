@@ -58,7 +58,7 @@ angular.module('angular-rails-example').controller 'Project::Logs::FormControlle
 
       cookie.set(key_form, {}) unless tmp_form?
 
-      $s.project.log.end_page = tmp_form.end_page if tmp_form?.end_page?
+      $s.project.log.end_page = parseInt(tmp_form.end_page) if tmp_form?.end_page?
       $s.project.log.note     = tmp_form.note if tmp_form?.note?
 
     $s.save_storage = ->

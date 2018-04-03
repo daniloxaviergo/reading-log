@@ -21,6 +21,22 @@ class Project < ActiveRecord::Base
     }
   end
 
+  def nome
+    self.name
+  end
+
+  def inicio
+    self.started_at
+  end
+
+  def created_at
+    DateTime.now
+  end
+
+  def updated_at
+    DateTime.now
+  end
+
   def progresso
     ((page.to_f / total_page.to_f) * 100).round(2)
   end
